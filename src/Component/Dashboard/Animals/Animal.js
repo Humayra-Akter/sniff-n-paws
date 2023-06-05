@@ -4,7 +4,7 @@ import AnimalRow from "./AnimalRow";
 const Animal = () => {
   const [animals, setAnimals] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/query")
+    fetch("http://localhost:5000/animal")
       .then((res) => res.json())
       .then((datam) => {
         setAnimals(datam);
@@ -19,21 +19,21 @@ const Animal = () => {
         <table className="table">
           <thead>
             <tr>
-              <th>admin_id</th>
-              <td>name</td>
-              <td>email</td>
-              <td>gender</td>
-              <td>city</td>
-              <td>street</td>
-              <td>house</td>
-              <td>dob</td>
-              <td>salary</td>
-              <td>designation</td>
+              <th>index</th>
+              <td>AGE</td>
+              <td>BREED</td>
+              <td>WEIGHT</td>
+              <td>RATE</td>
+              <td>TYPE</td>
+              <td>COMING_DATE</td>
+              <td>RELEASE_DATE</td>
+              <td>customer_id</td>
+              <td>DELETE</td>
             </tr>
           </thead>
           <tbody>
             {animals.map((animal) => (
-              <AnimalRow key={animal.admin_id} animal={animal}></AnimalRow>
+              <AnimalRow key={animal.index} animal={animal}></AnimalRow>
             ))}
           </tbody>
         </table>

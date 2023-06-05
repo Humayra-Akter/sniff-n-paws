@@ -1,10 +1,7 @@
 import React from "react";
-import Admin from "./Admin";
-import { Button } from "react-daisyui";
 
 const AdminUserRow = ({ admin }) => {
-  const mayesha = admin[2];
-  console.log(mayesha);
+
 
   return (
     <tr>
@@ -19,8 +16,11 @@ const AdminUserRow = ({ admin }) => {
       <td>{admin[8]}</td>
       <td>{admin[9]}</td>
       <td>
-        <Button></Button>
-      </td> </tr>
+        <button className="btn btn-primary btn-sm text-white font-bold bg-red-500">
+          X
+        </button>
+      </td>
+    </tr>
   );
 };
 

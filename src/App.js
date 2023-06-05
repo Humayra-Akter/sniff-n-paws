@@ -7,6 +7,7 @@ import Dashboard from "./Component/Dashboard/Dashboard";
 import About from "./Component/About/About";
 import Error from "./Component/Shared/Error";
 import Contact from "./Component/Contact/Contact";
+import Signup from "./Component/Login/Signup";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />}></Route>
+        <Route path="/signup" element={<Signup />}></Route>
         <Route path="/dashboard" element={<Dashboard />}></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="/contact" element={<Contact />}></Route>

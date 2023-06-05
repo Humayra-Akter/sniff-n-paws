@@ -1,33 +1,60 @@
 import React from "react";
 import img from "../../assets/images/pets-g1111451cc_1280.jpg";
+import img2 from "../../assets/images/favicon.ico";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const menuItems = (
     <>
       <li>
-        <Link to={"/"}>Home</Link>
+        <Link
+          className="w-full h-full font-extrabold uppercase text-center text-sm text-pink-400"
+          to={"/"}
+        >
+          Home
+        </Link>
       </li>
       <li>
-        <Link to={"/login"}>login</Link>
+        <Link
+          className="w-full h-full font-extrabold uppercase text-center text-sm text-pink-400"
+          to={"/dashboard"}
+        >
+          dashboard
+        </Link>
       </li>
       <li>
-        <Link to={"/about"}>About</Link>
+        <Link
+          className="w-full h-full font-extrabold uppercase text-center text-sm text-pink-400"
+          to={"/contact"}
+        >
+          contact
+        </Link>
       </li>
       <li>
-        <Link to={"/dashboard"}>dashboard</Link>
+        <Link
+          className="w-full h-full font-extrabold uppercase text-center text-sm text-pink-400"
+          to={"/about"}
+        >
+          About
+        </Link>
       </li>
       <li>
-        <Link to={"/contact"}>contact</Link>
+        <Link
+          className="w-full h-full font-extrabold uppercase text-center text-sm text-pink-400"
+          to={"/login"}
+        >
+          login
+        </Link>
       </li>
     </>
   );
   return (
-    <div
-      style={{
-        background: `url(${img})`,
-      }}
-    >
+    // <div
+    //   style={{
+    //     background: `url(${img})`,
+    //   }}
+    // >
+    <div>
       <div className="navbar">
         <div className="navbar-start">
           <div className="dropdown">
@@ -54,12 +81,12 @@ const Navbar = () => {
               {menuItems}
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">Doctors Portal</a>
+          <img height={20} width={60} src={img2} />
         </div>
-        <div className="navbar-center hidden lg:flex">
+        <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal p-0">{menuItems}</ul>
         </div>
-        <div className="navbar-end">
+        {/* <div className="navbar-end">
           <label
             tabIndex="1"
             htmlFor="dashboard-sidebar"
@@ -80,7 +107,7 @@ const Navbar = () => {
               />
             </svg>
           </label>
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from "react";
-import AdminUserRow from "./AdminUserRow";
+import AdminPhnRow from "./AdminPhnRow";
 
-const Admin = () => {
+const AdminPhn = () => {
   const [admins, setAdmins] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/admin")
+    fetch("http://localhost:5000/adminphone")
       .then((res) => res.json())
       .then((datam) => {
         setAdmins(datam);
-        // console.log(admins[3]);
       });
   }, []);
-  let nameArray = admins.map(([ name]) => name);
+  let nameArray = admins.map(([name]) => name);
 
   console.log(nameArray);
   return (
@@ -24,21 +23,13 @@ const Admin = () => {
           <thead>
             <tr>
               <th>admin_id</th>
-              <td>name</td>
-              <td>email</td>
-              <td>gender</td>
-              <td>city</td>
-              <td>street</td>
-              <td>house</td>
-              <td>dob</td>
-              <td>salary</td>
-              <td>designation</td>
+              <td>Phone</td>
               <td>delete</td>
             </tr>
           </thead>
           <tbody>
             {admins.map((admin) => (
-              <AdminUserRow key={admin.admin_id} admin={admin}></AdminUserRow>
+              <AdminPhnRow key={admin.admin_id} admin={admin}></AdminPhnRow>
             ))}
           </tbody>
         </table>
@@ -47,4 +38,4 @@ const Admin = () => {
   );
 };
 
-export default Admin;
+export default AdminPhn;

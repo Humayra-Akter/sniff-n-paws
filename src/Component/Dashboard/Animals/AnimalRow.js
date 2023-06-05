@@ -12,7 +12,11 @@ const AnimalRow = ({ animal }) => {
       <td>{animal[6]}</td>
       <td>{animal[7]}</td>
       <td>{animal[8]}</td>
-      <td>{animal[9]}</td>
+      <td>
+        <button className="btn btn-primary btn-sm text-white font-bold bg-red-500">
+          X
+        </button>
+      </td>
     </tr>
   );
 };

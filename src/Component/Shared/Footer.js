@@ -4,11 +4,12 @@ import img from "../../assets/images/cute-foot-paws-up-cat-pet-leg-stretch-on-wh
 const Footer = () => {
   return (
     <div
+      className="pt-20"
       style={{
         background: `url(${img})`,
       }}
     >
-      <footer className="footer p-10text-base-content">
+      <footer className="footer p-10 text-base-content">
         <div>
           <span className="footer-title">Services</span>
           <a className="link link-hover">Branding</a>
