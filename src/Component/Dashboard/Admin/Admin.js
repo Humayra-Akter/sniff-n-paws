@@ -4,7 +4,7 @@ import AdminUserRow from "./AdminUserRow";
 const Admin = () => {
   const [admins, setAdmins] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/admin")
+    fetch("http://localhost:3002/admin")
       .then((res) => res.json())
       .then((datam) => {
         setAdmins(datam);
@@ -48,13 +48,10 @@ const Admin = () => {
               <td>name</td>
               <td>email</td>
               <td>gender</td>
-              <td>city</td>
-              <td>street</td>
-              <td>house</td>
-              <td>dob</td>
-              <td>salary</td>
-              <td>designation</td>
-              <td>delete</td>
+              <td>Address</td>
+              <td>Date of birth</td>
+              <td>Age</td>
+              <td>phone</td>
             </tr>
           </thead>
           <tbody>
