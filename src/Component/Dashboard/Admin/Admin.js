@@ -11,9 +11,30 @@ const Admin = () => {
         // console.log(admins[3]);
       });
   }, []);
-  let nameArray = admins.map(([ name]) => name);
 
-  console.log(nameArray);
+  const [records, setRecords] = useState([]);
+
+  const handleDelete = async (admin_id) => {
+    try {
+      console.log(admin_id);
+      // Make an HTTP DELETE request to your backend API endpoint
+      const response = await fetch(`/api/records/${admin_id}`, {
+        method: "DELETE",
+      });
+
+      if (response.ok) {
+        // If the delete operation was successful, update the state to remove the deleted record
+        setRecords(records.filter((record) => record.admin_id !== admin_id));
+      } else {
+        // Handle error cases
+        // You can display an error message or handle the error in any other way
+        console.error("Failed to delete the record.");
+      }
+    } catch (error) {
+      console.error("An error occurred while deleting the record:", error);
+    }
+  };
+
   return (
     <div className="pt-40 pb-56">
       <div className="overflow-x-auto">
@@ -38,7 +59,11 @@ const Admin = () => {
           </thead>
           <tbody>
             {admins.map((admin) => (
-              <AdminUserRow key={admin.admin_id} admin={admin}></AdminUserRow>
+              <AdminUserRow
+                key={admin.admin_id}
+                admin={admin}
+                onDelete={handleDelete}
+              ></AdminUserRow>
             ))}
           </tbody>
         </table>
@@ -46,5 +71,4 @@ const Admin = () => {
     </div>
   );
 };
-
 export default Admin;

@@ -10,9 +10,6 @@ const AdminPhn = () => {
         setAdmins(datam);
       });
   }, []);
-  let nameArray = admins.map(([name]) => name);
-
-  console.log(nameArray);
   return (
     <div className="pt-40 pb-56">
       <div className="overflow-x-auto">

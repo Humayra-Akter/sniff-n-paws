@@ -8,7 +8,8 @@ import About from "./Component/About/About";
 import Error from "./Component/Shared/Error";
 import Contact from "./Component/Contact/Contact";
 import Signup from "./Component/Login/Signup";
-
+// import { ToastContainer } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
 function App() {
   return (
     <div>
@@ -23,6 +24,7 @@ function App() {
         <Route path="*" element={<Error />}></Route>
       </Routes>
       <Footer></Footer>
+      {/* <ToastContainer /> */}
     </div>
   );
 }
