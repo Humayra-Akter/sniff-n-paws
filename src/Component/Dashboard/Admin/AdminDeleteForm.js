@@ -15,14 +15,14 @@ const AdminDeleteForm = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="flex justify-center items-center pb-10">
       <div className="card w-96 bg-base-100 shadow-xl">
         <div className="card-body">
           <h2 className="text-center text-2xl text-pink-400 uppercase font-bold">
             Delete Admin
           </h2>
           <form onSubmit={handleDelete}>
-            <div>
+            <div className="pb-7">
               <label htmlFor="name">Admin ID:</label>
               <input
                 type="text"
@@ -34,7 +34,10 @@ const AdminDeleteForm = () => {
               />
             </div>
 
-            <button className="btn btn-accent w-full max-w-xs" type="submit">
+            <button
+              className="btn btn-accent w-full max-w-xs btn-outline font-semibold bg-pink-200"
+              type="submit"
+            >
               DELETE
             </button>
           </form>

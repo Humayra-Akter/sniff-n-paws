@@ -16,7 +16,7 @@ const AdminInsertForm = () => {
     phone: "",
     designation: "",
   });
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value.toString() });
@@ -29,7 +29,7 @@ const AdminInsertForm = () => {
     // TODO: Send the formData to the backend API for insertion
     let adminUrl = `http://localhost:3002/admin_insert/${formData.name}/${formData.email}/${formData.gender}/${formData.city}/${formData.street}/${formData.house}/${formData.dob}/${formData.salary}/${formData.designation}/${formData.phone}`;
     fetch(adminUrl);
-    navigate("/dashboard");
+    //navigate("/dashboard");
   };
 
   return (
@@ -41,117 +41,132 @@ const AdminInsertForm = () => {
           </h2>
           <form onSubmit={handleSubmit}>
             <div>
-              <label htmlFor="name">Name:</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                className="input input-bordered w-full max-w-xs"
-                value={formData.name}
-                onChange={handleInputChange}
-              />
+              <div>
+                <label htmlFor="name">Name:</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  className="input input-bordered input-sm w-full max-w-xs"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                />
+              </div>
+              <div>
+                <label htmlFor="email">Email:</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  className="input input-bordered input-sm  w-full max-w-xs"
+                  onChange={handleInputChange}
+                />
+              </div>
             </div>
             <div>
-              <label htmlFor="email">Email:</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                className="input input-bordered w-full max-w-xs"
-                onChange={handleInputChange}
-              />
+              <div>
+                <label htmlFor="gender">Gender:</label>
+                <input
+                  type="text"
+                  id="gender"
+                  name="gender"
+                  value={formData.gender}
+                  className="input input-bordered input-sm w-full max-w-xs"
+                  onChange={handleInputChange}
+                />
+              </div>
+              <div>
+                <label htmlFor="city">City:</label>
+                <input
+                  type="text"
+                  id="city"
+                  name="city"
+                  value={formData.city}
+                  className="input input-bordered input-sm w-full max-w-xs"
+                  onChange={handleInputChange}
+                />
+              </div>
             </div>
             <div>
-              <label htmlFor="gender">Gender:</label>
-              <input
-                type="text"
-                id="gender"
-                name="gender"
-                value={formData.gender}
-                className="input input-bordered w-full max-w-xs"
-                onChange={handleInputChange}
-              />
+              <div>
+                <label htmlFor="street">Street:</label>
+                <input
+                  type="text"
+                  id="street"
+                  name="street"
+                  className="input input-bordered input-sm w-full max-w-xs"
+                  value={formData.street}
+                  onChange={handleInputChange}
+                />
+              </div>
+
+              <div>
+                <div>
+                  <label htmlFor="house">House:</label>
+                  <input
+                    type="text"
+                    id="house"
+                    name="house"
+                    className="input input-bordered input-sm w-full max-w-xs"
+                    value={formData.house}
+                    onChange={handleInputChange}
+                  />
+                </div>
+              </div>
             </div>
-            <div>
-              <label htmlFor="city">City:</label>
-              <input
-                type="text"
-                id="city"
-                name="city"
-                value={formData.city}
-                className="input input-bordered w-full max-w-xs"
-                onChange={handleInputChange}
-              />
-            </div>
-            <div>
-              <label htmlFor="street">Street:</label>
-              <input
-                type="text"
-                id="street"
-                name="street"
-                className="input input-bordered w-full max-w-xs"
-                value={formData.street}
-                onChange={handleInputChange}
-              />
-            </div>
-            <div>
-              <label htmlFor="house">House:</label>
-              <input
-                type="text"
-                id="house"
-                name="house"
-                className="input input-bordered w-full max-w-xs"
-                value={formData.house}
-                onChange={handleInputChange}
-              />
-            </div>
+
             <div>
               <label htmlFor="house">Phone:</label>
               <input
                 type="text"
                 id="phone"
                 name="phone"
-                className="input input-bordered w-full max-w-xs"
+                className="input input-bordered input-sm w-full max-w-xs"
                 value={formData.phone}
                 onChange={handleInputChange}
               />
             </div>
             <div>
-              <label htmlFor="dob">Date of Birth:</label>
-              <input
-                type="text"
-                id="dob"
-                name="dob"
-                className="input input-bordered w-full max-w-xs"
-                value={formData.dob}
-                onChange={handleInputChange}
-              />
+              <div>
+                <label htmlFor="dob">Date of Birth:</label>
+                <input
+                  type="text"
+                  id="dob"
+                  name="dob"
+                  className="input input-bordered input-sm w-full max-w-xs"
+                  value={formData.dob}
+                  onChange={handleInputChange}
+                />
+              </div>
             </div>
             <div>
-              <label htmlFor="salary">Salary:</label>
-              <input
-                type="number"
-                id="salary"
-                name="salary"
-                className="input input-bordered w-full max-w-xs"
-                value={formData.salary}
-                onChange={handleInputChange}
-              />
+              <div>
+                <label htmlFor="salary">Salary:</label>
+                <input
+                  type="number"
+                  id="salary"
+                  name="salary"
+                  className="input input-bordered input-sm w-full max-w-xs"
+                  value={formData.salary}
+                  onChange={handleInputChange}
+                />
+              </div>
             </div>
-            <div className="pb-4">
+            <div className="pb-7">
               <label htmlFor="designation">Designation:</label>
               <input
                 type="text"
                 id="designation"
                 name="designation"
                 value={formData.designation}
-                className="input input-bordered w-full max-w-xs"
+                className="input input-bordered input-sm w-full max-w-xs"
                 onChange={handleInputChange}
               />
             </div>
+
             <button
-              className="btn btn-accent uppercase w-full max-w-xs"
+              className="btn btn-accent w-full max-w-xs btn-outline font-semibold bg-pink-200"
               type="submit"
             >
               SUBMIT
