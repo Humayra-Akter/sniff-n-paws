@@ -14,7 +14,7 @@ const RescuedAnimal = () => {
     <div>
       <div className="pt-40 pb-56">
         <div className="overflow-x-auto">
-          <h1 className="font-semibold text-2xl text-pink-400">
+          <h1 className="font-semibold text-2xl text-blue-700">
             Total Animals: {animals.length}
           </h1>
           <table className="table">

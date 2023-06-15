@@ -59,7 +59,7 @@ const Signup = () => {
         className="card w-96 bg-base-100 shadow-xl"
       >
         <div className="card-body">
-          <h2 className="text-center text-2xl text-pink-400 uppercase font-bold">
+          <h2 className="text-center text-2xl text-blue-700 uppercase font-bold">
             signup
           </h2>
           {/* <form onSubmit={handleSubmit(onSubmit)}> */}
@@ -95,13 +95,13 @@ const Signup = () => {
           <p className="text-center">
             <small className="font-semibold">
               Already have an account to sniff-n-paws?
-              <Link className="text-pink-400" to="/login">
+              <Link className="text-blue-700" to="/login">
                 Login
               </Link>
             </small>
           </p>
           <div className="divider">OR</div>
-          <button className="btn btn-outline font-semibold bg-pink-200">
+          <button className="btn btn-outline font-semibold text-blue-200">
             Continue with Google
           </button>
         </div>

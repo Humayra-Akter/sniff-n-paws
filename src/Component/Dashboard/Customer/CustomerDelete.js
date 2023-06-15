@@ -1,7 +1,6 @@
-/* eslint-disable no-restricted-globals */
 import React, { useState } from "react";
 
-const AdminDeleteForm = () => {
+const CustomerDelete = () => {
   const [formData, setFormData] = useState({ admin_id: "" });
 
   const handleInputChange = (e) => {
@@ -10,7 +9,7 @@ const AdminDeleteForm = () => {
 
   const handleDelete = (e) => {
     e.preventDefault();
-    let adminUrl = `http://localhost:3002/admin_delete/${formData.name}`;
+    let adminUrl = `http://localhost:3002/customer_delete/${formData.name}`;
     fetch(adminUrl);
   };
 
@@ -19,11 +18,11 @@ const AdminDeleteForm = () => {
       <div className="card w-96 bg-base-100 shadow-xl">
         <div className="card-body">
           <h2 className="text-center text-2xl text-blue-700 uppercase font-bold">
-            Delete Admin
+            Delete Customer
           </h2>
           <form onSubmit={handleDelete}>
             <div className="pb-7">
-              <label htmlFor="name">Admin ID:</label>
+              <label htmlFor="name">Customer ID:</label>
               <input
                 type="text"
                 id="name"
@@ -47,4 +46,4 @@ const AdminDeleteForm = () => {
   );
 };
 
-export default AdminDeleteForm;
+export default CustomerDelete;

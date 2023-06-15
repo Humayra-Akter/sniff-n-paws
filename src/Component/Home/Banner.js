@@ -8,7 +8,7 @@ const Banner = () => {
         style={{
           background: `url(${img})`,
         }}
-        className="w-full h-full font-extrabold text-center text-5xl text-pink-50"
+        className="w-full h-full font-extrabold text-center text-5xl bg-blue-50"
       >
         SNIFF-N-PAWS
       </h1>

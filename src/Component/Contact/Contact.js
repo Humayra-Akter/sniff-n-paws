@@ -11,12 +11,12 @@ const Contact = () => {
   return (
     <div>
       <div>
-        <h1 className="uppercase p-10 font-bold text-3xl text-pink-500 text-center">
+        <h1 className="uppercase p-10 font-bold text-3xl text-blue-700 text-center">
           group members
         </h1>
       </div>
       <div className="flex p-4 pt-12 space-x-4">
-        <div class="card w-96 bg-pink-100 shadow-xl">
+        <div class="card w-96 text-blue-100 shadow-xl">
           <figure>
             <img src={img1} className="w-80 h-48" />
           </figure>
@@ -36,7 +36,7 @@ const Contact = () => {
             </p>
           </div>
         </div>
-        <div class="card w-96 bg-pink-100 shadow-xl">
+        <div class="card w-96 text-blue-100 shadow-xl">
           <figure>
             <img src={img2} className="w-80 h-48" />
           </figure>
@@ -56,7 +56,7 @@ const Contact = () => {
             </p>
           </div>
         </div>
-        <div class="card w-96 bg-pink-100 shadow-xl">
+        <div class="card w-96 text-blue-100 shadow-xl">
           <figure>
             <img src={img3} className="w-80 h-48" />
           </figure>
@@ -76,7 +76,7 @@ const Contact = () => {
             </p>
           </div>
         </div>
-        <div class="card w-96 bg-pink-100 shadow-xl">
+        <div class="card w-96 text-blue-100 shadow-xl">
           <figure>
             <img src={img4} className="w-80 h-48" />
           </figure>
@@ -96,7 +96,7 @@ const Contact = () => {
             </p>
           </div>
         </div>
-        <div class="card w-96 bg-pink-100 shadow-xl">
+        <div class="card w-96 text-blue-100 shadow-xl">
           <figure>
             <img src={img1} className="w-80 h-48" />
           </figure>

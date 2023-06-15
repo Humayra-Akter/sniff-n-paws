@@ -5,7 +5,7 @@ const About = () => {
   return (
     <div className="pt-28 pb-48">
       <img className="mx-auto" src={img} alt="" />
-      <h4 className="mt-4 p-8  w-full h-full font-extrabold text-center text-4xl text-pink-400">
+      <h4 className="mt-4 p-8  w-full h-full font-extrabold text-center text-4xl text-blue-700">
         About us
       </h4>
       <p className="mt-4 pt-2 ms-2 me-2 p-7 text-justify">

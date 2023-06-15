@@ -14,7 +14,7 @@ const CustomerAnimalCabin = () => {
     <div>
       <div className="pt-20 pb-56 pl-0">
         <div className="overflow-x-auto">
-          <h1 className="font-semibold text-2xl pb-7 text-pink-500">
+          <h1 className="font-semibold text-2xl pb-7 text-blue-700">
             Total animal cabin: {customerAnimalCabins.length}
           </h1>
           <table className="table">

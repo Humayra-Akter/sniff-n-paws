@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import CustomerRow from "./CustomerRow";
+import CustomerInsert from "./CustomerInsert";
+import CustomerDelete from "./CustomerDelete";
+import CustomerUpdate from "./CustomerUpdate";
 
 const Customer = () => {
   const [customers, setCustomers] = useState([]);
@@ -15,7 +18,7 @@ const Customer = () => {
     <div>
       <div className="pt-20 pb-56 pl-0">
         <div className="overflow-x-auto">
-          <h1 className="font-semibold text-2xl pb-7 text-pink-500">
+          <h1 className="font-semibold text-2xl pb-7 text-blue-700">
             Total customers: {customers.length}
           </h1>
           <table className="table">
@@ -57,6 +60,11 @@ const Customer = () => {
             </tbody>
           </table>
         </div>
+      </div>
+      <div>
+        <CustomerInsert></CustomerInsert>
+        <CustomerDelete></CustomerDelete>
+        <CustomerUpdate></CustomerUpdate>
       </div>
     </div>
   );

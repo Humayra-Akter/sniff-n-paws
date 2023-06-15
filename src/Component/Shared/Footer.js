@@ -1,5 +1,5 @@
 import React from "react";
-import img from "../../assets/images/cute-foot-paws-up-cat-pet-leg-stretch-on-white-background-flat-icon-free-vector.jpg";
+import img from "../../assets/images/cute-foot-paws-up-cat-pet-leg-stretch-on-white-background-flat-icon-free-vector.png";
 
 const Footer = () => {
   return (
@@ -7,6 +7,7 @@ const Footer = () => {
       className="pt-20"
       style={{
         background: `url(${img})`,
+        backgroundSize: "cover",
       }}
     >
       <footer className="footer p-10 text-base-content">

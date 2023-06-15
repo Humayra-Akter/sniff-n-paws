@@ -8,7 +8,7 @@ const Navbar = () => {
     <>
       <li>
         <Link
-          className="w-full h-full font-black uppercase text-center text-sm text-pink-500"
+          className="w-full h-full font-black uppercase text-center text-sm text-blue-700"
           to={"/"}
         >
           Home
@@ -16,7 +16,7 @@ const Navbar = () => {
       </li>
       <li>
         <Link
-          className="w-full h-full font-black uppercase text-center text-sm text-pink-500"
+          className="w-full h-full font-black uppercase text-center text-sm text-blue-700"
           to={"/dashboard"}
         >
           dashboard
@@ -24,7 +24,7 @@ const Navbar = () => {
       </li>
       <li>
         <Link
-          className="w-full h-full font-black uppercase text-center text-sm text-pink-500"
+          className="w-full h-full font-black uppercase text-center text-sm text-blue-700"
           to={"/donation"}
         >
           donation
@@ -32,7 +32,7 @@ const Navbar = () => {
       </li>
       <li>
         <Link
-          className="w-full h-full font-black uppercase text-center text-sm text-pink-500"
+          className="w-full h-full font-black uppercase text-center text-sm text-blue-700"
           to={"/contact"}
         >
           contact
@@ -40,7 +40,7 @@ const Navbar = () => {
       </li>
       <li>
         <Link
-          className="w-full h-full font-black uppercase text-center text-sm text-pink-500"
+          className="w-full h-full font-black uppercase text-center text-sm text-blue-700"
           to={"/about"}
         >
           About
@@ -48,7 +48,7 @@ const Navbar = () => {
       </li>
       <li>
         <Link
-          className="w-full h-full font-black uppercase text-center text-sm text-pink-500"
+          className="w-full h-full font-black uppercase text-center text-sm text-blue-700"
           to={"/login"}
         >
           login
