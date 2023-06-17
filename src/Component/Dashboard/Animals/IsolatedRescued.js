@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import DaycareAnimalRow from "./DaycareAnimalRow";
 
-const UnvaccinattedDaycare = () => {
+const IsolatedRescued = () => {
   const [animals, setAnimals] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:3002/unvaccinated_day_care_animal")
+    fetch("http://localhost:3002/isolated_rescued_animal")
       .then((res) => res.json())
       .then((datam) => {
         setAnimals(datam);
@@ -15,7 +15,7 @@ const UnvaccinattedDaycare = () => {
       <div className="pt-40 pb-40">
         <div className="overflow-x-auto">
           <h1 className="font-semibold text-2xl text-blue-700">
-            Total Unvaccinated Daycare Animals: {animals.length}
+            Total Isolated Rescued Animals: {animals.length}
           </h1>
           <table className="table">
             <thead>
@@ -46,4 +46,4 @@ const UnvaccinattedDaycare = () => {
   );
 };
 
-export default UnvaccinattedDaycare;
+export default IsolatedRescued;

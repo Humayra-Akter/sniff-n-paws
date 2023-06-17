@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from "react";
 import DaycareAnimalRow from "./DaycareAnimalRow";
-import HealthyDaycare from "./HealthyDaycare";
-import IsolatedDaycare from "./IsolatedDaycare";
-import DaycareInsert from "./DaycareInsert";
-import UnvaccinatedDaycare from "./UnvaccinatedDaycare";
 
-const DaycareAnimal = () => {
+const UnvaccinatedRescued = () => {
   const [animals, setAnimals] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:3002/day_care_animal")
+    fetch("http://localhost:3002/unvaccinated_rescued_animal")
       .then((res) => res.json())
       .then((datam) => {
         setAnimals(datam);
@@ -19,7 +15,7 @@ const DaycareAnimal = () => {
       <div className="pt-40 pb-40">
         <div className="overflow-x-auto">
           <h1 className="font-semibold text-2xl text-blue-700">
-            Total Daycare Animals: {animals.length}
+            Total Unvaccinated Rescued Animals: {animals.length}
           </h1>
           <table className="table">
             <thead>
@@ -46,12 +42,8 @@ const DaycareAnimal = () => {
           </table>
         </div>
       </div>
-      <DaycareInsert></DaycareInsert>
-      <HealthyDaycare></HealthyDaycare>
-      <IsolatedDaycare></IsolatedDaycare>
-      <UnvaccinatedDaycare></UnvaccinatedDaycare>
     </div>
   );
 };
 
-export default DaycareAnimal;
+export default UnvaccinatedRescued;
