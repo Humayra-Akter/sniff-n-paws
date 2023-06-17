@@ -4,6 +4,7 @@ import AdminInsertForm from "./AdminInsertForm";
 import AdminDeleteForm from "./AdminDeleteForm";
 import AdminUpdateForm from "./AdminUpdateForm";
 
+
 const Admin = () => {
   const [admins, setAdmins] = useState([]);
   useEffect(() => {

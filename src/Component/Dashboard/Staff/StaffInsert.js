@@ -1,7 +1,9 @@
 /* eslint-disable no-restricted-globals */
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Dashboard from "../Dashboard";
 
-const AdminInsertForm = () => {
+const StaffInsert = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -12,7 +14,7 @@ const AdminInsertForm = () => {
     dob: "",
     salary: "",
     phone: "",
-    designation: "",
+    specialization: "",
   });
   //const navigate = useNavigate();
 
@@ -22,24 +24,12 @@ const AdminInsertForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let adminUrl = `http://localhost:3002/admin_insert/${formData.name}/${formData.email}/${formData.gender}/${formData.city}/${formData.street}/${formData.house}/${formData.dob}/${formData.salary}/${formData.designation}/${formData.phone}`;
-    fetch(adminUrl)
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error("ERORRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR");
-        }
-        res.json();
-      })
-      .then((data) => {
-        if (data.error) {
-          console.error(data.error); // Show the error message
-        } else {
-          console.log(data.message); // Show success message
-        }
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
+    // You can send the formData to the backend for further processing
+    //console.log(formData);
+    // TODO: Send the formData to the backend API for insertion
+    let adminUrl = `http://localhost:3002/staff_insert/${formData.name}/${formData.email}/${formData.gender}/${formData.city}/${formData.street}/${formData.house}/${formData.dob}/${formData.salary}/${formData.specialization}/${formData.phone}`;
+    fetch(adminUrl);
+    //navigate("/dashboard");"/staff_insert/:name/:email/:gender/:city/:street/:house/:dob/:salary/:specialization/:phone
   };
 
   return (
@@ -47,7 +37,7 @@ const AdminInsertForm = () => {
       <div className="card w-96 bg-base-100 shadow-xl">
         <div className="card-body">
           <h2 className="text-center text-2xl text-blue-700 uppercase font-bold">
-            Add Admin
+            Add Staff
           </h2>
           <form onSubmit={handleSubmit}>
             <div>
@@ -152,9 +142,9 @@ const AdminInsertForm = () => {
             </div>
             <div>
               <div>
-                <label htmlFor="salary">Salary:</label>
+                <label htmlFor="salary">Salary</label>
                 <input
-                  type="number"
+                  type="text"
                   id="salary"
                   name="salary"
                   className="input input-bordered input-sm w-full max-w-xs"
@@ -163,24 +153,27 @@ const AdminInsertForm = () => {
                 />
               </div>
             </div>
-            <div className="pb-7">
-              <label htmlFor="designation">Designation:</label>
-              <input
-                type="text"
-                id="designation"
-                name="designation"
-                value={formData.designation}
-                className="input input-bordered input-sm w-full max-w-xs"
-                onChange={handleInputChange}
-              />
+            <div>
+              <div>
+                <label htmlFor="specialization">Specialization:</label>
+                <input
+                  type="text"
+                  id="specialization"
+                  name="specialization"
+                  className="input input-bordered input-sm w-full max-w-xs"
+                  value={formData.specialization}
+                  onChange={handleInputChange}
+                />
+              </div>
             </div>
-
-            <button
-              className="btn btn-accent w-full max-w-xs btn-outline font-semibold text-blue-200"
-              type="submit"
-            >
-              SUBMIT
-            </button>
+            <div className="pt-4">
+              <button
+                className="btn btn-accent w-full max-w-xs btn-outline font-semibold text-blue-200"
+                type="submit"
+              >
+                SUBMIT
+              </button>
+            </div>
           </form>
         </div>
       </div>
@@ -188,4 +181,4 @@ const AdminInsertForm = () => {
   );
 };
 
-export default AdminInsertForm;
+export default StaffInsert;

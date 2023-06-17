@@ -101,7 +101,7 @@ const Signup = () => {
             </small>
           </p>
           <div className="divider">OR</div>
-          <button className="btn btn-outline font-semibold text-blue-200">
+          <button className="btn btn-outline font-bold bg-blue-100 text-xs text-blue-800">
             Continue with Google
           </button>
         </div>

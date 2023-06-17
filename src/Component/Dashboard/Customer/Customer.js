@@ -46,7 +46,7 @@ const Customer = () => {
                   Age
                 </td>
                 <td className="uppercase text-xs font-extrabold text-left">
-                  Designation
+                  Home
                 </td>
               </tr>
             </thead>
@@ -61,10 +61,12 @@ const Customer = () => {
           </table>
         </div>
       </div>
-      <div>
+      <div className="flex pt-20">
         <CustomerInsert></CustomerInsert>
-        <CustomerDelete></CustomerDelete>
-        <CustomerUpdate></CustomerUpdate>
+        <div className="pl-20">
+          <CustomerDelete></CustomerDelete>
+          <CustomerUpdate></CustomerUpdate>
+        </div>
       </div>
     </div>
   );

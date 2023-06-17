@@ -11,6 +11,7 @@ const StaffRow = ({ staff }) => {
       <td>{staff[5]}</td>
       <td>{staff[6]}</td>
       <td>{staff[7]}</td>
+      <td>{staff[8]}</td>
     </tr>
   );
 };

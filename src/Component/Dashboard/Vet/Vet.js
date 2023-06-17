@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from "react";
 import VetRow from "./VetRow";
+import VetInsert from "./VetInsert";
+import VetDelete from "./VetDelete";
+import VetUpdate from "./VetUpdate";
+import VetShiftView from "./VetShiftView";
+import VetShift from "./VetShift";
 
 const Vet = () => {
   const [vets, setVets] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:3002/vet")
+    fetch("http://localhost:3002/veterinarian")
       .then((res) => res.json())
       .then((datam) => {
         setVets(datam);
@@ -12,6 +17,8 @@ const Vet = () => {
   }, []);
   return (
     <div>
+      <VetShiftView></VetShiftView>
+      <VetShift></VetShift>
       <div className="pt-20 pb-56 pl-0">
         <div className="overflow-x-auto">
           <h1 className="font-semibold text-2xl pb-7 text-blue-700">
@@ -42,7 +49,7 @@ const Vet = () => {
                   Age
                 </td>
                 <td className="uppercase text-xs font-extrabold text-left">
-                  Designation
+                  Salary
                 </td>
               </tr>
             </thead>
@@ -52,6 +59,13 @@ const Vet = () => {
               ))}
             </tbody>
           </table>
+        </div>
+        <div className="flex pt-20">
+          <VetInsert></VetInsert>
+          <div className="pl-20">
+            <VetDelete></VetDelete>
+            <VetUpdate></VetUpdate>
+          </div>
         </div>
       </div>
     </div>

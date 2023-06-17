@@ -23,49 +23,57 @@ const Dashboard = () => {
           <li>
             <Link
               to="/dashboard"
-              className="w-full pt-20 uppercase h-full font-bold text-center text-lg text-blue-700"
+              className="w-full pt-20 uppercase h-full font-bold text-center text-sm text-blue-700"
             >
-              Admin
+              👉 Admin
             </Link>
           </li>
           <li>
             <Link
               to="/dashboard/customers"
-              className="w-full uppercase h-full font-bold text-center text-lg text-blue-700"
+              className="w-full uppercase h-full font-bold text-center text-sm text-blue-700"
             >
-              customers
+              👉 customers
             </Link>
           </li>
           <li>
             <Link
               to="/dashboard/staff"
-              className="w-full uppercase h-full font-bold text-center text-lg text-blue-700"
+              className="w-full uppercase h-full font-bold text-center text-sm text-blue-700"
             >
-              staff
+              👉 staff
             </Link>
           </li>
           <li>
             <Link
               to="/dashboard/vet"
-              className="w-full uppercase h-full font-bold text-center text-lg text-blue-700"
+              className="w-full uppercase h-full font-bold text-center text-sm text-blue-700"
             >
-              veterinarian
+              👉 veterinarian
             </Link>
           </li>
           <li>
             <Link
-              className="w-full uppercase h-full font-bold text-center text-lg text-blue-700"
+              to="/dashboard/rescuer"
+              className="w-full uppercase h-full font-bold text-center text-sm text-blue-700"
+            >
+              👉 rescuer
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="w-full uppercase h-full font-bold text-center text-sm text-blue-700"
               to="/dashboard/daycareAnimal"
             >
-              daycare Animal
+              👉 daycare Animal
             </Link>
           </li>
           <li>
             <Link
-              className="w-full uppercase h-full font-bold text-center text-lg text-blue-700"
+              className="w-full uppercase h-full font-bold text-center text-sm text-blue-700"
               to="/dashboard/rescuedAnimal"
             >
-              rescued Animal
+              👉 rescued Animal
             </Link>
           </li>
         </ul>

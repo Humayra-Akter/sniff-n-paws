@@ -1,7 +1,7 @@
 /* eslint-disable no-restricted-globals */
 import React, { useState } from "react";
 
-const CustomerUpdate = () => {
+const StaffUpdate = () => {
   const [formData, setFormData] = useState({ admin_id: "" });
 
   const handleInputChange = (e) => {
@@ -10,7 +10,7 @@ const CustomerUpdate = () => {
 
   const handleUpdate = (e) => {
     e.preventDefault();
-    let adminUrl = `http://localhost:3002/customer_update/${formData.attributeName}/${formData.attributeValue}/customer_id/${formData.name}`;
+    let adminUrl = `http://localhost:3002/staff_update/${formData.attributeName}/${formData.attributeValue}/staff_id/${formData.name}`;
     fetch(adminUrl);
   };
 
@@ -19,7 +19,7 @@ const CustomerUpdate = () => {
       <div className="card w-96 bg-base-100 shadow-xl">
         <div className="card-body">
           <h2 className="text-center text-2xl text-blue-700 uppercase font-bold">
-            Update customer
+            Update staff
           </h2>
           <form onSubmit={handleUpdate}>
             <div>
@@ -68,4 +68,4 @@ const CustomerUpdate = () => {
   );
 };
 
-export default CustomerUpdate;
+export default StaffUpdate;

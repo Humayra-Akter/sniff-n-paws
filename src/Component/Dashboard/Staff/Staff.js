@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import StaffRow from "./StaffRow";
+import StaffInsert from "./StaffInsert";
+import StaffDelete from "./StaffDelete";
+import StaffUpdate from "./StaffUpdate";
 
 const Staff = () => {
   const [staffs, setStaffs] = useState([]);
@@ -22,7 +25,7 @@ const Staff = () => {
             <thead>
               <tr>
                 <th className="uppercase text-xs font-extrabold text-left">
-                  customer_id
+                  staff_id
                 </th>
                 <td className="uppercase text-xs font-extrabold text-left">
                   name
@@ -43,7 +46,10 @@ const Staff = () => {
                   Age
                 </td>
                 <td className="uppercase text-xs font-extrabold text-left">
-                  Designation
+                  Salary
+                </td>
+                <td className="uppercase text-xs font-extrabold text-left">
+                  Phone
                 </td>
               </tr>
             </thead>
@@ -53,6 +59,13 @@ const Staff = () => {
               ))}
             </tbody>
           </table>
+        </div>
+        <div className="flex pt-20">
+          <StaffInsert></StaffInsert>
+          <div className="pl-20">
+            <StaffDelete></StaffDelete>
+            <StaffUpdate></StaffUpdate>
+          </div>
         </div>
       </div>
     </div>

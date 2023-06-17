@@ -6,6 +6,7 @@ import img4 from "../../assets/images/sadiq.jpg";
 import img5 from "../../assets/images/call.png";
 import img6 from "../../assets/images/address.png";
 import img7 from "../../assets/images/facebook-app-symbol.png";
+import img8 from "../../assets/images/kitty-g3d21a21e7_1280.png";
 
 const Contact = () => {
   return (
@@ -15,10 +16,10 @@ const Contact = () => {
           group members
         </h1>
       </div>
-      <div className="flex p-4 pt-12 space-x-4">
-        <div class="card w-96 text-blue-100 shadow-xl">
+      <div className="flex p-4 pt-12 space-x-4 pb-24">
+        <div class="card w-96 text-blue-700 shadow-xl">
           <figure>
-            <img src={img1} className="w-80 h-48" />
+            <img src={img1} className="w-72 h-72" />
           </figure>
           <div class="card-body">
             <p className="text-center font-extrabold text-sm">Humayra Akter</p>
@@ -36,12 +37,14 @@ const Contact = () => {
             </p>
           </div>
         </div>
-        <div class="card w-96 text-blue-100 shadow-xl">
+        <div class="card w-96 text-blue-700 shadow-xl">
           <figure>
-            <img src={img2} className="w-80 h-48" />
+            <img src={img2} className="w-72 h-72" />
           </figure>
           <div class="card-body">
-            <p className="text-center font-extrabold text-sm">Humayra Akter</p>
+            <p className="text-center font-extrabold text-sm">
+              Abrar Mahir Esam
+            </p>
             <p className="flex">
               <img src={img5} className="w-4 h-4" />
               <h1 className="pl-5">01234567890</h1>
@@ -52,16 +55,16 @@ const Contact = () => {
             </p>
             <p className="flex">
               <img src={img7} className="w-4 h-4" />
-              <h1 className="pl-5">https://humayraakter.com</h1>
+              <h1 className="pl-5">https://abrarmahiresam.com</h1>
             </p>
           </div>
         </div>
-        <div class="card w-96 text-blue-100 shadow-xl">
+        <div class="card w-96 text-blue-700 shadow-xl">
           <figure>
-            <img src={img3} className="w-80 h-48" />
+            <img src={img3} className="w-72 h-72" />
           </figure>
           <div class="card-body">
-            <p className="text-center font-extrabold text-sm">Humayra Akter</p>
+            <p className="text-center font-extrabold text-sm">Imran Khan</p>
             <p className="flex">
               <img src={img5} className="w-4 h-4" />
               <h1 className="pl-5">01234567890</h1>
@@ -72,16 +75,18 @@ const Contact = () => {
             </p>
             <p className="flex">
               <img src={img7} className="w-4 h-4" />
-              <h1 className="pl-5">https://humayraakter.com</h1>
+              <h1 className="pl-5">https://imrankhan.com</h1>
             </p>
           </div>
         </div>
-        <div class="card w-96 text-blue-100 shadow-xl">
+        <div class="card w-96 text-blue-700 shadow-xl">
           <figure>
-            <img src={img4} className="w-80 h-48" />
+            <img src={img4} className="w-72 h-72" />
           </figure>
           <div class="card-body">
-            <p className="text-center font-extrabold text-sm">Humayra Akter</p>
+            <p className="text-center font-extrabold text-sm">
+              Md. Sadiqul Alam
+            </p>
             <p className="flex">
               <img src={img5} className="w-4 h-4" />
               <h1 className="pl-5">01234567890</h1>
@@ -92,16 +97,16 @@ const Contact = () => {
             </p>
             <p className="flex">
               <img src={img7} className="w-4 h-4" />
-              <h1 className="pl-5">https://humayraakter.com</h1>
+              <h1 className="pl-5">https://sadiqulalam.com</h1>
             </p>
           </div>
         </div>
-        <div class="card w-96 text-blue-100 shadow-xl">
+        <div class="card w-96 text-blue-700 shadow-xl">
           <figure>
-            <img src={img1} className="w-80 h-48" />
+            <img src={img8} className="w-72 h-72" />
           </figure>
           <div class="card-body">
-            <p className="text-center font-extrabold text-sm">Humayra Akter</p>
+            <p className="text-center font-extrabold text-sm">Mayesha Tasnim</p>
             <p className="flex">
               <img src={img5} className="w-4 h-4" />
               <h1 className="pl-5">01234567890</h1>
@@ -112,7 +117,7 @@ const Contact = () => {
             </p>
             <p className="flex">
               <img src={img7} className="w-4 h-4" />
-              <h1 className="pl-5">https://humayraakter.com</h1>
+              <h1 className="pl-5">https://mayeshatasnim.com</h1>
             </p>
           </div>
         </div>

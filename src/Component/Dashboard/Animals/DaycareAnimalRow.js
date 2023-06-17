@@ -12,7 +12,6 @@ const DaycareAnimalRow = ({ animal }) => {
       <td>{animal[6]}</td>
       <td>{animal[7]}</td>
       <td>{animal[8]}</td>
-      
     </tr>
   );
 };
