@@ -1,11 +1,6 @@
 import React from "react";
 
-const AdminUserRow = ({ admin, onDelete }) => {
-  const handleDelete = () => {
-    // Call the onDelete function passed as a prop, passing the record ID
-    onDelete(admin.id);
-  };
-
+const AdminUserRow = ({ admin }) => {
   return (
     <tr>
       <th>{admin[0]}</th>

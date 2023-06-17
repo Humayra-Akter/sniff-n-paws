@@ -1,16 +1,22 @@
 import React from "react";
-import img from "../../assets/images/Fosterpet.png";
+import img from "../../assets/images/fostercat1.jpg";
+import img1 from "../../assets/images/fosterDog2.jpg";
+import img2 from "../../assets/images/fosterRabbit1.jpg";
+import img3 from "../../assets/images/fosterRabbit1.jpg";
+import img4 from "../../assets/images/fosterRabbit2.jpg";
+import img5 from "../../assets/images/fostercat3.jpg";
+import img6 from "../../assets/images/fosterDog2.jpg";
 
 const FaqSection = () => {
   return (
-    <div>
+    <div className="pt-32 bg-blue-50">
       <div>
         <h1 className="font-extrabold text-center text-5xl text-blue-700 uppercase">
+          {/* <img className="w-20 h-20" src={img} /> */}
           Frequently asked Question
         </h1>
       </div>
-
-      <div className="grid grid-cols-2">
+      <div className="grid grid-cols-2 gap-16 px-16">
         <div className="mt-5 mb-5 ms-4 pt-16">
           <div className="collapse collapse-arrow text-blue-800">
             <input type="radio" name="my-accordion-2" checked="checked" />
@@ -96,7 +102,36 @@ const FaqSection = () => {
           </div>
         </div>
         <div>
-          <img className="w-full" src={img} alt="" />
+          <h1 className="text-left pl-5 pt-20 font-semibold text-blue-800 text-xs">
+            Slide to know us
+          </h1>
+          <div className="flex justify-left items-center h-screen">
+            <div className=" w-full">
+              <div class="carousel carousel-center h-screen max-w-md p-4 space-x-4 bg-neutral rounded-box">
+                <div class="carousel-item">
+                  <img src={img} className="rounded-box w-full h-1/2" alt="" />
+                </div>
+                <div class="carousel-item">
+                  <img src={img1} className="rounded-box w-full h-1/2" alt="" />
+                </div>
+                <div class="carousel-item">
+                  <img src={img2} className="rounded-box w-full h-1/2" alt="" />
+                </div>
+                <div class="carousel-item">
+                  <img src={img3} className="rounded-box w-full h-1/2" alt="" />
+                </div>
+                <div class="carousel-item">
+                  <img src={img4} className="rounded-box w-full h-1/2" alt="" />
+                </div>
+                <div class="carousel-item">
+                  <img src={img5} className="rounded-box w-full h-1/2" alt="" />
+                </div>
+                <div class="carousel-item">
+                  <img src={img6} className="rounded-box w-full h-1/2" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

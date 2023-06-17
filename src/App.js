@@ -17,6 +17,7 @@ import Customers from "./Component/Dashboard/Customer/Customers";
 import Feedback from "./Component/Feedback/Feedback";
 import Rescuer from "./Component/Dashboard/Rescuer/Rescuer";
 import Donation from "./Component/Donation/Donation";
+import Services from "./Component/Services/Services";
 // import { ToastContainer } from "react-toastify";
 // import "react-toastify/dist/ReactToastify.css";
 function App() {
@@ -25,6 +26,7 @@ function App() {
       <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/services" element={<Services />} />
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
         <Route path="/dashboard" element={<Dashboard />}>
