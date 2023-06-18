@@ -2,10 +2,28 @@ import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import img from "../../assets/images/paws-gb0cab7af7_1280.png";
 import { useSignInWithGoogle } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
+import Loading from "../Shared/Loading";
 
 const Login = () => {
-const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
-
+  const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+  if (error) {
+    return (
+      <div>
+        <p>Error: {error.message}</p>
+      </div>
+    );
+  }
+  if (loading) {
+    return <Loading></Loading>;
+  }
+  if (user) {
+    return (
+      <div>
+        <p>Signed In User: {user.email}</p>
+      </div>
+    );
+  }
   return (
     <div className="flex justify-center items-center h-screen">
       <div
@@ -67,7 +85,10 @@ const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
             </small>
           </p>
           <div className="divider">OR</div>
-          <button className="btn btn-outline font-bold bg-blue-100 text-xs text-blue-800">
+          <button
+            onClick={() => signInWithGoogle()}
+            className="btn btn-outline font-bold bg-blue-100 text-xs text-blue-800"
+          >
             Continue with Google
           </button>
         </div>
