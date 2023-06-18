@@ -2,8 +2,16 @@ import React from "react";
 import img from "../../assets/images/pets-g1111451cc_1280.jpg";
 import img2 from "../../assets/images/favicon.ico";
 import { Link } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
+import { signOut } from "firebase/auth";
 
 const Navbar = () => {
+  const [user, loading, error] = useAuthState(auth);
+  const logout = () => {
+    signOut(auth);
+    localStorage.removeItem("accessToken");
+  };
   const menuItems = (
     <>
       <li>
@@ -22,14 +30,24 @@ const Navbar = () => {
           services
         </Link>
       </li>
-      <li>
+      {user && (
+        <li>
+          <Link
+            className="w-full h-full font-black uppercase text-center text-sm text-blue-700"
+            to={"/dashboard"}
+          >
+            Dashboard
+          </Link>
+        </li>
+      )}
+      {/* <li>
         <Link
           className="w-full h-full font-black uppercase text-center text-sm text-blue-700"
           to={"/dashboard"}
         >
           dashboard
         </Link>
-      </li>
+      </li> */}
       <li>
         <Link
           className="w-full h-full font-black uppercase text-center text-sm text-blue-700"
@@ -62,13 +80,30 @@ const Navbar = () => {
           About
         </Link>
       </li>
-      <li>
+      {/* <li>
         <Link
           className="w-full h-full font-black uppercase text-center text-sm text-blue-700"
           to={"/login"}
         >
           login
         </Link>
+      </li> */}
+      <li>
+        {user ? (
+          <button
+            className="w-full h-full btn btn-ghost font-black uppercase text-center text-sm text-blue-700"
+            onClick={logout}
+          >
+            Sign Out
+          </button>
+        ) : (
+          <Link
+            className="w-full h-full btn btn-ghost font-black uppercase text-center text-sm text-blue-700"
+            to={"/login"}
+          >
+            Login
+          </Link>
+        )}
       </li>
     </>
   );
