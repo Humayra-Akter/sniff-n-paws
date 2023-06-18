@@ -20,8 +20,8 @@ const ServiceCards = ({ service }) => {
         <p>{description}</p>
         <div className="grid grid-cols-2 gap-4">
           <button className="btn btn-sm bg-blue-100 max-w-xs btn-outline font-semibold text-blue-700">
-            <Link className="text-blue-700" to="/about">
-              about
+            <Link className="text-blue-700" to="/login">
+              adopt
             </Link>
           </button>
           <button className="btn btn-sm bg-blue-100 max-w-xs btn-outline font-semibold text-blue-700">

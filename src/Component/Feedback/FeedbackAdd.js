@@ -1,11 +1,10 @@
-/* eslint-disable no-restricted-globals */
 import React, { useState } from "react";
 
 const FeedbackAdd = () => {
   const current = new Date();
-  const date = `${current.getDate()}/${
+  const date = `${current.getDate()}-${
     current.getMonth() + 1
-  }/${current.getFullYear()}`;
+  }-${current.getFullYear()}`;
   const [formData, setFormData] = useState({
     subject: "",
     rating: "",
@@ -18,7 +17,7 @@ const FeedbackAdd = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let adminUrl = `http://localhost:3002/feedback_insert/${formData.subject}/${date}/${formData.rating}/${formData.message}/NULL`;
+    let adminUrl = `http://localhost:3002/feedback_insert/${formData.subject}/${date}/${formData.rating}/${formData.message}/1`;
     fetch(adminUrl);
     ///feedback_insert/:subject/:date/:rating/:message/:customerId
   };

@@ -2,13 +2,13 @@ import React, { useState } from "react";
 
 const DonationAdd = () => {
   const current = new Date();
-  const date = `${current.getDate()}/${
+  const date = `${current.getDate()}-${
     current.getMonth() + 1
-  }/${current.getFullYear()}`;
+  }-${current.getFullYear()}`;
   const [formData, setFormData] = useState({
-    subject: "",
-    rating: "",
-    message: "",
+    name: "",
+    amount: "",
+    cid: "",
   });
 
   const handleInputChange = (e) => {
@@ -17,7 +17,8 @@ const DonationAdd = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let adminUrl = `http://localhost:3002/donation_insert/${formData.subject}/${date}/${formData.rating}/${formData.message}/NULL`;
+    if (formData.cid.length === 0) formData.cid = "null";
+    let adminUrl = `http://localhost:3002/donation_insert/${formData.name}/${formData.amount}/${date}/${formData.cid}`;
     fetch(adminUrl);
     ///DONATION_NAME, D_AMOUNT, DONATION_DATE, CUSTOMER_ID
   };
@@ -32,13 +33,24 @@ const DonationAdd = () => {
           <form onSubmit={handleSubmit}>
             <div>
               <div>
-                <label htmlFor="subject">Subject:</label>
+                <label htmlFor="name">Name:</label>
                 <input
                   type="text"
-                  id="subject"
-                  name="subject"
+                  id="name"
+                  name="name"
                   className="input input-bordered input-sm w-full max-w-xs"
-                  value={formData.subject}
+                  value={formData.name}
+                  onChange={handleInputChange}
+                />
+              </div>
+              <div>
+                <label htmlFor="amount">Amount:</label>
+                <input
+                  type="number"
+                  id="amount"
+                  name="amount"
+                  value={formData.amount}
+                  className="input input-bordered input-sm  w-full max-w-xs"
                   onChange={handleInputChange}
                 />
               </div>
@@ -56,24 +68,13 @@ const DonationAdd = () => {
             </div>
             <div>
               <div>
-                <label htmlFor="rating">Rating:</label>
+                <label htmlFor="cid">Customer ID:</label>
                 <input
                   type="text"
-                  id="rating"
-                  name="rating"
-                  value={formData.rating}
+                  id="cid"
+                  name="cid"
+                  value={formData.cid}
                   className="input input-bordered input-sm w-full max-w-xs"
-                  onChange={handleInputChange}
-                />
-              </div>
-              <div>
-                <label htmlFor="message">Message:</label>
-                <input
-                  type="text"
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  className="input input-bordered input-lg w-full max-w-xs"
                   onChange={handleInputChange}
                 />
               </div>
