@@ -40,22 +40,16 @@ const Navbar = () => {
           </Link>
         </li>
       )}
-      {/* <li>
-        <Link
-          className="w-full h-full font-black uppercase text-center text-sm text-blue-700"
-          to={"/dashboard"}
-        >
-          dashboard
-        </Link>
-      </li> */}
-      <li>
-        <Link
-          className="w-full h-full font-black uppercase text-center text-sm text-blue-700"
-          to={"/donation"}
-        >
-          donation
-        </Link>
-      </li>
+      {user && (
+        <li>
+          <Link
+            className="w-full h-full font-black uppercase text-center text-sm text-blue-700"
+            to={"/donation"}
+          >
+            donation
+          </Link>
+        </li>
+      )}
       <li>
         <Link
           className="w-full h-full font-black uppercase text-center text-sm text-blue-700"
@@ -80,22 +74,14 @@ const Navbar = () => {
           About
         </Link>
       </li>
-      {/* <li>
-        <Link
-          className="w-full h-full font-black uppercase text-center text-sm text-blue-700"
-          to={"/login"}
-        >
-          login
-        </Link>
-      </li> */}
       <li>
         {user ? (
-          <button
+          <Link
             className="w-full h-full btn btn-ghost font-black uppercase text-center text-sm text-blue-700"
             onClick={logout}
           >
             Sign Out
-          </button>
+          </Link>
         ) : (
           <Link
             className="w-full h-full btn btn-ghost font-black uppercase text-center text-sm text-blue-700"
