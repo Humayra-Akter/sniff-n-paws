@@ -3,6 +3,7 @@ import CustomerRow from "./CustomerRow";
 import CustomerInsert from "./CustomerInsert";
 import CustomerDelete from "./CustomerDelete";
 import CustomerUpdate from "./CustomerUpdate";
+import CustomerBanner from "./CustomerBanner";
 
 const Customer = () => {
   const [customers, setCustomers] = useState([]);
@@ -16,6 +17,7 @@ const Customer = () => {
 
   return (
     <div>
+      <CustomerBanner></CustomerBanner>
       <div className="pt-20 pb-56 pl-0">
         <div className="overflow-x-auto">
           <h1 className="font-semibold text-2xl pb-7 text-blue-700">
