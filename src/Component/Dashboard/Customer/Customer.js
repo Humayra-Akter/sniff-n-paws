@@ -63,12 +63,9 @@ const Customer = () => {
           </table>
         </div>
       </div>
-      <div className="flex pt-20">
-        <CustomerInsert></CustomerInsert>
-        <div className="pl-20">
-          <CustomerDelete></CustomerDelete>
-          <CustomerUpdate></CustomerUpdate>
-        </div>
+      <div className="flex pt-20 px-20 gap-32">
+        <CustomerDelete></CustomerDelete>
+        <CustomerUpdate></CustomerUpdate>
       </div>
     </div>
   );

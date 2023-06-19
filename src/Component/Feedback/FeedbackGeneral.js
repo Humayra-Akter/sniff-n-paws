@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import FeedbackAdd from "./FeedbackAdd";
 import FeedbackCard from "./FeedbackCard";
+import { Link } from "react-router-dom";
 
 const FeedbackGeneral = () => {
   return (
@@ -10,8 +11,36 @@ const FeedbackGeneral = () => {
           OUR feedbacks
         </h3>
       </div>
-      <div className="grid grid-cols-3">
-        <FeedbackCard></FeedbackCard>
+      <div className="pl-20 pt-20">
+        <div class="dropdown dropdown-right">
+          <label tabindex="0" className="btn m-1 bg-blue-50">
+            Search here according to rating
+          </label>
+          <ul
+            tabindex="0"
+            class="dropdown-content menu p-2 shadow bg-blue-50 rounded-box w-52"
+          >
+            <li>
+              <Link
+                to="/positive_feedback"
+                className="w-full uppercase h-full font-bold text-center text-sm text-blue-700"
+              >
+                👉 positive feedback
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                to="/negative_feedback"
+                className="w-full uppercase h-full font-bold text-center text-sm text-blue-700"
+              >
+                👉 negative feedback
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div className="grid grid-cols-2">
         <FeedbackCard></FeedbackCard>
         <FeedbackAdd></FeedbackAdd>
       </div>

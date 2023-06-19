@@ -6,9 +6,12 @@ import CustomerAnimalCabin from "./CustomerAnimalCabin";
 
 const Customers = () => {
   return (
+    
     <div>
       <Customer></Customer>
-      <CustomerPricing></CustomerPricing>
+      <div id="pricing">
+        <CustomerPricing></CustomerPricing>
+      </div>
       <CustomerTotalDatcareServices></CustomerTotalDatcareServices>
       <CustomerAnimalCabin></CustomerAnimalCabin>
     </div>

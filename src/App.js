@@ -21,6 +21,8 @@ import RequireAuth from "./Component/Login/RequireAuth";
 import Donation from "./Component/Donation/Donation";
 import Donate from "./Component/Donation/Donate";
 import FeedbackGeneral from "./Component/Feedback/FeedbackGeneral";
+import FeedbackPositive from "./Component/Feedback/FeedbackPositive";
+import FeedbackNegative from "./Component/Feedback/FeedbackNegative";
 // import { ToastContainer } from "react-toastify";
 // import "react-toastify/dist/ReactToastify.css";
 function App() {
@@ -30,6 +32,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/positive_feedback" element={<FeedbackPositive />} />
+        <Route path="/negative_feedback" element={<FeedbackNegative />} />
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
         <Route
