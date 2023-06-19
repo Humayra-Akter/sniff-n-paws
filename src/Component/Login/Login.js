@@ -4,12 +4,15 @@ import img from "../../assets/images/paws-gb0cab7af7_1280.png";
 import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import Loading from "../Shared/Loading";
+import axios from "axios";
 
 const Login = () => {
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
   const navigate = useNavigate();
   const location = useLocation();
-  //let from = location.state?.from?.pathname || "/";
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   let from =
     location.state && location.state.from && location.state.from.pathname
       ? location.state.from.pathname
@@ -29,7 +32,25 @@ const Login = () => {
   if (user) {
     navigate(from, { replace: true });
   }
+  const handleLogin = async (e) => {
+    e.preventDefault();
 
+    try {
+      const response = await axios.post("http://localhost:3002/customers", {
+        email,
+        password,
+      });
+      const { success, user } = response.data;
+
+      if (success) {
+        console.log("Login successful:", user);
+      } else {
+        console.error("Login failed:", user);
+      }
+    } catch (error) {
+      console.error("Error during login:", error);
+    }
+  };
   return (
     <div className="flex justify-center items-center h-screen">
       <div
@@ -42,19 +63,7 @@ const Login = () => {
           <h2 className="text-center text-2xl text-blue-700 uppercase font-bold">
             Login
           </h2>
-          {/* <form onSubmit={handleSubmit(onSubmit)}> */}
-          {/* email field */}
-          <form>
-            <div className="form-control w-full max-w-xs">
-              <label className="label">
-                <span className="label-text">Name</span>
-              </label>
-              <input
-                type="text"
-                placeholder="Your Name"
-                className="input input-bordered w-full max-w-xs"
-              />
-            </div>
+          <form onSubmit={handleLogin}>
             <div className="form-control w-full max-w-xs">
               <label className="label">
                 <span className="label-text">Email</span>
@@ -62,6 +71,8 @@ const Login = () => {
               <input
                 type="email"
                 placeholder="Your Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="input input-bordered w-full max-w-xs"
               />
             </div>
@@ -73,6 +84,8 @@ const Login = () => {
               <input
                 type="password"
                 placeholder="Your Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 className="input input-bordered w-full max-w-xs"
               />
             </div>
