@@ -6,7 +6,6 @@ const Donation = () => {
   return (
     <div>
       <DonationPrev></DonationPrev>
-      <DonationAdd></DonationAdd>
     </div>
   );
 };

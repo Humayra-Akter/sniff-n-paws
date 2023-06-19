@@ -62,6 +62,22 @@ const Dashboard = () => {
           </li>
           <li>
             <Link
+              to="/dashboard/donation"
+              className="w-full uppercase h-full font-bold text-center text-sm text-blue-700"
+            >
+              👉 donation
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/dashboard/feedback"
+              className="w-full uppercase h-full font-bold text-center text-sm text-blue-700"
+            >
+              👉 feedback
+            </Link>
+          </li>
+          <li>
+            <Link
               className="w-full uppercase h-full font-bold text-center text-sm text-blue-700"
               to="/dashboard/daycareAnimal"
             >

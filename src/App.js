@@ -16,9 +16,11 @@ import Vet from "./Component/Dashboard/Vet/Vet";
 import Customers from "./Component/Dashboard/Customer/Customers";
 import Feedback from "./Component/Feedback/Feedback";
 import Rescuer from "./Component/Dashboard/Rescuer/Rescuer";
-import Donation from "./Component/Donation/Donation";
 import Services from "./Component/Services/Services";
 import RequireAuth from "./Component/Login/RequireAuth";
+import Donation from "./Component/Donation/Donation";
+import Donate from "./Component/Donation/Donate";
+import FeedbackGeneral from "./Component/Feedback/FeedbackGeneral";
 // import { ToastContainer } from "react-toastify";
 // import "react-toastify/dist/ReactToastify.css";
 function App() {
@@ -43,25 +45,18 @@ function App() {
           <Route path="vet" element={<Vet />}></Route>
           <Route path="customers" element={<Customers />}></Route>
           <Route path="rescuer" element={<Rescuer />}></Route>
+          <Route path="donation" element={<Donation />}></Route>
+          <Route path="feedback" element={<Feedback />}></Route>
           <Route path="daycareAnimal" element={<DaycareAnimal />}></Route>
           <Route path="rescuedAnimal" element={<RescuedAnimal />}></Route>
         </Route>
+        <Route path="/donate" element={<Donate />}></Route>
         <Route path="/about" element={<About />}></Route>
-        <Route
-          path="/donation"
-          element={
-            <RequireAuth>
-              <Dashboard />
-            </RequireAuth>
-          }
-        ></Route>
-        {/* <Route path="/donation" element={<Donation />}></Route> */}
-        <Route path="/feedback" element={<Feedback />}></Route>
+        <Route path="/feedbackGeneral" element={<FeedbackGeneral />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
         <Route path="*" element={<Error />}></Route>
       </Routes>
       <Footer></Footer>
-      {/* <ToastContainer /> */}
     </div>
   );
 }

@@ -40,22 +40,21 @@ const Navbar = () => {
           </Link>
         </li>
       )}
-      {user && (
-        <li>
-          <Link
-            className="w-full h-full font-black uppercase text-center text-sm text-blue-700"
-            to={"/donation"}
-          >
-            donation
-          </Link>
-        </li>
-      )}
+
       <li>
         <Link
           className="w-full h-full font-black uppercase text-center text-sm text-blue-700"
-          to={"/feedback"}
+          to={"/feedbackGeneral"}
         >
           feedback
+        </Link>
+      </li>
+      <li>
+        <Link
+          className="w-full h-full font-black uppercase text-center text-sm text-blue-700"
+          to={"/donate"}
+        >
+          Donate
         </Link>
       </li>
       <li>

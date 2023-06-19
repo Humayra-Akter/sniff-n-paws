@@ -1,51 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import img from "../../assets/images/footprints-g19010b4f3_1280.png";
-// import {
-//   useSignInWithEmailAndPassword,
-//   useSignInWithGoogle,
-// } from "react-firebase-hooks/auth";
-// import auth from "../../firebase.init";
-// import Loading from "../Shared/Loading";
-// import { Link, useLocation, useNavigate } from "react-router-dom";
-// import { useEffect } from "react";
-// import useToken from "../../hooks/useToken";
 
 const Signup = () => {
-  //   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
-  //   const {
-  //     register,
-  //     formState: { errors },
-  //     handleSubmit,
-  //   } = useForm();
-  //   const [signInWithEmailAndPassword, user, loading, error] =
-  //     useSignInWithEmailAndPassword(auth);
-  //   let signInError;
-
-  //   const [token] = useToken(user || gUser);
-
-  //   const navigate = useNavigate();
-  //   const location = useLocation();
-  //   let from = location.state?.from?.pathname || "/";
-
-  //   useEffect(() => {
-  //     if (token) {
-  //       navigate(from, { replace: true });
-  //     }
-  //   }, [token, navigate]);
-
-  //   if (loading || gLoading) {
-  //     return <Loading></Loading>;
-  //   }
-
-  //   if (error || gError) {
-  //     signInError = (
-  //       <p className="text-red-600">
-  //         <small>{error?.message || gError?.message}</small>
-  //       </p>
-  //     );
-  //   }
-
   const onSubmit = (data) => {
     console.log(data);
   };

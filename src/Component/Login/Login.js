@@ -9,7 +9,13 @@ const Login = () => {
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
   const navigate = useNavigate();
   const location = useLocation();
-  let from = location.state?.from?.pathname || "/";
+  //let from = location.state?.from?.pathname || "/";
+  let from =
+    location.state && location.state.from && location.state.from.pathname
+      ? location.state.from.pathname
+      : "/";
+
+  console.log(from);
   if (error) {
     return (
       <div>
@@ -98,3 +104,10 @@ const Login = () => {
 };
 
 export default Login;
+// import React from "react";
+
+// const Login = () => {
+//   return <div></div>;
+// };
+
+// export default Login;
