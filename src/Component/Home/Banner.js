@@ -1,13 +1,46 @@
 import React from "react";
 import img from "../../assets/images/pets-g1111451cc_1280-removebg-preview.png";
+import img1 from "../../assets/images/rabbit-removebg-preview.png";
+// import bg from "../../assets/images/paws-gb0cab7af7_1280.png";
 
 const Banner = () => {
   return (
     <div>
-      <h1 className="w-full h-full text-blue-800 pt-10 font-serif font-extrabold text-center text-5xl bg-blue-50">
+      <h1 className="w-full h-full border-8 border-blue-100 text-blue-800 pt-10 p-10 font-serif font-extrabold text-center text-5xl bg-blue-50">
         SNIFF-N-PAWS
       </h1>
-      <img className="w-full bg-blue-50" src={img}></img>
+      <div className="flex">
+        <img
+          className="w-1/2 justify-start border-l-8 border-r-8 border-b-8 border-blue-100 bg-blue-50"
+          src={img}
+          alt=""
+        ></img>
+        <h1
+          // style={{
+          //   background: `url(${bg})`,
+          //   backgroundSize: "cover",
+          // }}
+          className="uppercase font-mono justify-end text-center px-56 py-44 text-2xl font-black text-blue-800"
+        >
+          We care for your pets
+        </h1>
+      </div>
+      <div className=" flex justify-end">
+        <h1
+          // style={{
+          //   background: `url(${bg})`,
+          //   backgroundSize: "cover",
+          // }}
+          className="uppercase font-mono text-center  px-36 py-44  text-2xl font-black text-blue-800"
+        >
+          We serve your rabbits, dogs & cats
+        </h1>
+        <img
+          className="w-1/2 bg-blue-50 border-8 border-blue-100"
+          src={img1}
+          alt=""
+        ></img>
+      </div>
     </div>
   );
 };

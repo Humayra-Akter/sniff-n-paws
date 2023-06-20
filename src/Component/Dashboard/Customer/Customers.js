@@ -7,9 +7,7 @@ const Customers = () => {
   return (
     <div>
       <Customer></Customer>
-      <div id="pricing">
-        <CustomerPricing></CustomerPricing>
-      </div>
+      <CustomerPricing></CustomerPricing>
       <CustomerTotalDatcareServices></CustomerTotalDatcareServices>
     </div>
   );

@@ -11,8 +11,8 @@ const FeedbackGeneral = () => {
           OUR feedbacks
         </h3>
       </div>
-      <div className="flex gap-40">
-        <div className="pl-20 pt-20">
+      <div className="flex gap-96">
+        <div className="pl-80 pt-20">
           <div class="dropdown dropdown-right">
             <label tabindex="0" className="btn m-1 bg-blue-50">
               <small className="text-justify text-xs font-extrabold text-blue-700">
@@ -48,7 +48,7 @@ const FeedbackGeneral = () => {
             <label tabindex="0" className="btn m-1 bg-blue-50">
               <small className="text-justify text-xs font-extrabold text-blue-700">
                 Search Review
-              </small>{" "}
+              </small>
             </label>
             <ul
               tabindex="0"

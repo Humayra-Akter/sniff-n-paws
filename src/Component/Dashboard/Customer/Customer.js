@@ -46,6 +46,7 @@ const Customer = () => {
             <br />
             Total searched customers: {searchResult.length}
           </h1>
+
           <table className="table">
             <thead>
               <tr>
@@ -83,14 +84,14 @@ const Customer = () => {
                 ></CustomerRow>
               ))}
             </tbody>
-            <tbody>
+            {/* <tbody>
               {searchResult.map((customer) => (
                 <CustomerRow
                   key={customer.customer_id}
                   customer={customer}
                 ></CustomerRow>
               ))}
-            </tbody>
+            </tbody> */}
           </table>
         </div>
       </div>
