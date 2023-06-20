@@ -71,6 +71,14 @@ const Dashboard = () => {
           </li>
           <li>
             <Link
+              to="/dashboard/cabin"
+              className="w-full uppercase h-full font-bold text-center text-sm text-blue-700"
+            >
+              👉 cabin
+            </Link>
+          </li>
+          <li>
+            <Link
               to="/dashboard/donation"
               className="w-full uppercase h-full font-bold text-center text-sm text-blue-700"
             >

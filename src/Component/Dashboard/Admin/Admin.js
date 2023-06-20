@@ -3,6 +3,7 @@ import AdminUserRow from "./AdminUserRow";
 import AdminInsertForm from "./AdminInsertForm";
 import AdminDeleteForm from "./AdminDeleteForm";
 import AdminUpdateForm from "./AdminUpdateForm";
+import { Link } from "react-router-dom";
 
 const Admin = () => {
   const [admins, setAdmins] = useState([]);

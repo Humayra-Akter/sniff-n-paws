@@ -5,6 +5,7 @@ import VetDelete from "./VetDelete";
 import VetUpdate from "./VetUpdate";
 import VetShiftView from "./VetShiftView";
 import VetShift from "./VetShift";
+import VetAnimal from "./VetAnimal";
 
 const Vet = () => {
   const [vets, setVets] = useState([]);
@@ -19,6 +20,7 @@ const Vet = () => {
     <div>
       <VetShiftView></VetShiftView>
       <VetShift></VetShift>
+      <VetAnimal></VetAnimal>
       <div className="pt-20 pb-56 pl-0">
         <div className="overflow-x-auto">
           <h1 className="font-semibold text-2xl pb-7 text-blue-700">

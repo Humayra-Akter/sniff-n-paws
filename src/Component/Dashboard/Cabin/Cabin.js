@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import CustomerAnimalCabinRow from "./CustomerAnimalCabinRow";
+import CabinRow from "./CabinRow";
 
-const CustomerAnimalCabin = () => {
-  const [customerAnimalCabins, setCustomerAnimalCabins] = useState([]);
+const Cabin = () => {
+  const [cabins, setCabins] = useState([]);
   useEffect(() => {
     fetch("http://localhost:3002/customer_animal_cabin")
       .then((res) => res.json())
       .then((datam) => {
-        setCustomerAnimalCabins(datam);
+        setCabins(datam);
       });
   }, []);
   return (
@@ -15,7 +15,7 @@ const CustomerAnimalCabin = () => {
       <div className="pt-20 pb-56 pl-0">
         <div className="overflow-x-auto">
           <h1 className="font-semibold text-2xl pb-7 text-blue-700">
-            Total animal cabin: {customerAnimalCabins.length}
+            Total animal cabin: {cabins.length}
           </h1>
           <table className="table">
             <thead>
@@ -38,11 +38,11 @@ const CustomerAnimalCabin = () => {
               </tr>
             </thead>
             <tbody>
-              {customerAnimalCabins.map((customerAnimalCabin) => (
-                <CustomerAnimalCabinRow
-                  key={customerAnimalCabin.customerAnimalCabin_id}
-                  customerAnimalCabin={customerAnimalCabin}
-                ></CustomerAnimalCabinRow>
+              {cabins.map((cabin) => (
+                <CabinRow
+                  key={cabin.customerAnimalCabin_id}
+                  cabin={cabin}
+                ></CabinRow>
               ))}
             </tbody>
           </table>
@@ -52,4 +52,4 @@ const CustomerAnimalCabin = () => {
   );
 };
 
-export default CustomerAnimalCabin;
+export default Cabin;

@@ -2,7 +2,6 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./Component/Home/Home";
 import Footer from "./Component/Shared/Footer";
 import Navbar from "./Component/Shared/Navbar";
-import Login from "./Component/Login/Login";
 import Dashboard from "./Component/Dashboard/Dashboard";
 import About from "./Component/About/About";
 import Error from "./Component/Shared/Error";
@@ -28,6 +27,12 @@ import FeedbackForAdmin from "./Component/Feedback/FeedbackForAdmin";
 import FeedbackForServices from "./Component/Feedback/FeedbackForServices";
 import FeedbackForVet from "./Component/Feedback/FeedbackForVet";
 import FeedbackForStaff from "./Component/Feedback/FeedbackForStaff";
+import Cabin from "./Component/Dashboard/Cabin/Cabin";
+import LoginViewPg from "./Component/Login/LoginViewPg";
+import LoginAsAdmin from "./Component/Login/LoginAsAdmin";
+import LoginAsStaff from "./Component/Login/LoginAsStaff";
+import LoginAsVet from "./Component/Login/LoginAsVet";
+import LoginAsCustomer from "./Component/Login/LoginAsCustomer";
 // import { ToastContainer } from "react-toastify";
 // import "react-toastify/dist/ReactToastify.css";
 function App() {
@@ -49,7 +54,6 @@ function App() {
           element={<FeedbackForVet />}
         />
         <Route path="/feedback_staff_review" element={<FeedbackForStaff />} />
-        <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
         <Route
           path="dashboard"
@@ -65,6 +69,7 @@ function App() {
           <Route path="customers" element={<Customers />}></Route>
           <Route path="rescuer" element={<Rescuer />}></Route>
           <Route path="healthRecord" element={<HealthRecord />}></Route>
+          <Route path="cabin" element={<Cabin />}></Route>
           <Route path="donation" element={<Donation />}></Route>
           <Route path="feedback" element={<Feedback />}></Route>
           <Route path="daycareAnimal" element={<DaycareAnimal />}></Route>
@@ -72,6 +77,11 @@ function App() {
         </Route>
         <Route path="/donate" element={<Donate />}></Route>
         <Route path="/about" element={<About />}></Route>
+        <Route path="/loginView" element={<LoginViewPg />}></Route>
+        <Route path="/loginAdmin" element={<LoginAsAdmin />}></Route>
+        <Route path="/loginStaff" element={<LoginAsStaff />}></Route>
+        <Route path="/loginVet" element={<LoginAsVet />}></Route>
+        <Route path="/loginCustomer" element={<LoginAsCustomer />}></Route>
         <Route path="/feedbackGeneral" element={<FeedbackGeneral />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
         <Route path="*" element={<Error />}></Route>

@@ -89,7 +89,7 @@ const Navbar = () => {
         ) : (
           <Link
             className="w-full h-full btn btn-ghost font-black uppercase text-center text-sm text-blue-700"
-            to={"/login"}
+            to={"/loginView"}
           >
             Login
           </Link>
