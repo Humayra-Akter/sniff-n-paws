@@ -7,21 +7,44 @@ import CustomerBanner from "./CustomerBanner";
 
 const Customer = () => {
   const [customers, setCustomers] = useState([]);
+  let [searchText, setSearchText] = useState("");
+  const [searchResult, setSearchResult] = useState([]);
+
   useEffect(() => {
     fetch("http://localhost:3002/customer")
       .then((res) => res.json())
       .then((datam) => {
+        console.log(searchText);
         setCustomers(datam);
+        const match = datam.filter(
+          (d) => d.email && d.email.includes(searchText)
+        );
+        setSearchResult(match);
       });
-  }, []);
+  }, [searchText]);
+
+  const handleSearchChange = (event) => {
+    const searchText = event.target.value;
+    setSearchText(searchText);
+  };
 
   return (
     <div>
       <CustomerBanner></CustomerBanner>
+      <div>
+        <input
+          onChange={handleSearchChange}
+          type="text"
+          className="border-2"
+          placeholder="Search customer"
+        ></input>
+      </div>
       <div className="pt-20 pb-56 pl-0">
         <div className="overflow-x-auto">
           <h1 className="font-semibold text-2xl pb-7 text-blue-700">
             Total customers: {customers.length}
+            <br />
+            Total searched customers: {searchResult.length}
           </h1>
           <table className="table">
             <thead>
@@ -54,6 +77,14 @@ const Customer = () => {
             </thead>
             <tbody>
               {customers.map((customer) => (
+                <CustomerRow
+                  key={customer.customer_id}
+                  customer={customer}
+                ></CustomerRow>
+              ))}
+            </tbody>
+            <tbody>
+              {searchResult.map((customer) => (
                 <CustomerRow
                   key={customer.customer_id}
                   customer={customer}

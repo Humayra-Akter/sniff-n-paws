@@ -4,7 +4,6 @@ import AdminInsertForm from "./AdminInsertForm";
 import AdminDeleteForm from "./AdminDeleteForm";
 import AdminUpdateForm from "./AdminUpdateForm";
 
-
 const Admin = () => {
   const [admins, setAdmins] = useState([]);
   useEffect(() => {
@@ -47,6 +46,9 @@ const Admin = () => {
               </td>
               <td className="uppercase text-xs font-extrabold text-left">
                 Designation
+              </td>
+              <td className="uppercase text-xs font-extrabold text-left">
+                phone
               </td>
             </tr>
           </thead>

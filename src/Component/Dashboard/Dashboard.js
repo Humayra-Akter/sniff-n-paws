@@ -63,6 +63,14 @@ const Dashboard = () => {
           </li>
           <li>
             <Link
+              to="/dashboard/healthRecord"
+              className="w-full uppercase h-full font-bold text-center text-sm text-blue-700"
+            >
+              👉 health record
+            </Link>
+          </li>
+          <li>
+            <Link
               to="/dashboard/donation"
               className="w-full uppercase h-full font-bold text-center text-sm text-blue-700"
             >

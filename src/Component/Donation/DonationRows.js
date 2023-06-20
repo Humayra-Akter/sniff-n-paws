@@ -8,6 +8,7 @@ const DonationRows = ({ donation }) => {
       <td>{donation[2]}</td>
       <td>{donation[3]}</td>
       <td>{donation[4]}</td>
+      <td>{donation[5]}</td>
     </tr>
   );
 };

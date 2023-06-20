@@ -23,6 +23,11 @@ import Donate from "./Component/Donation/Donate";
 import FeedbackGeneral from "./Component/Feedback/FeedbackGeneral";
 import FeedbackPositive from "./Component/Feedback/FeedbackPositive";
 import FeedbackNegative from "./Component/Feedback/FeedbackNegative";
+import HealthRecord from "./Component/Dashboard/HealthRecord/HealthRecord";
+import FeedbackForAdmin from "./Component/Feedback/FeedbackForAdmin";
+import FeedbackForServices from "./Component/Feedback/FeedbackForServices";
+import FeedbackForVet from "./Component/Feedback/FeedbackForVet";
+import FeedbackForStaff from "./Component/Feedback/FeedbackForStaff";
 // import { ToastContainer } from "react-toastify";
 // import "react-toastify/dist/ReactToastify.css";
 function App() {
@@ -34,6 +39,16 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/positive_feedback" element={<FeedbackPositive />} />
         <Route path="/negative_feedback" element={<FeedbackNegative />} />
+        <Route path="/feedback_admin_review" element={<FeedbackForAdmin />} />
+        <Route
+          path="/feedback_service_review"
+          element={<FeedbackForServices />}
+        />
+        <Route
+          path="/feedback_veterinarian_review"
+          element={<FeedbackForVet />}
+        />
+        <Route path="/feedback_staff_review" element={<FeedbackForStaff />} />
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
         <Route
@@ -49,6 +64,7 @@ function App() {
           <Route path="vet" element={<Vet />}></Route>
           <Route path="customers" element={<Customers />}></Route>
           <Route path="rescuer" element={<Rescuer />}></Route>
+          <Route path="healthRecord" element={<HealthRecord />}></Route>
           <Route path="donation" element={<Donation />}></Route>
           <Route path="feedback" element={<Feedback />}></Route>
           <Route path="daycareAnimal" element={<DaycareAnimal />}></Route>

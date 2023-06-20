@@ -32,25 +32,29 @@ const Login = () => {
   if (user) {
     navigate(from, { replace: true });
   }
+
   const handleLogin = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:3002/customers", {
-        email,
-        password,
-      });
-      const { success, user } = response.data;
+      const response = await axios.get(
+        `http://localhost:3002/customer_password/${email}/${password}`
+      );
 
-      if (success) {
-        console.log("Login successful:", user);
+      const success = response.data.length > 0;
+
+      if (success > 0) {
+        console.log("Login successful:", response.data[0][2]);
+
+        navigate(from, { replace: true });
       } else {
-        console.error("Login failed:", user);
+        console.error("Login failed:", email);
       }
     } catch (error) {
       console.error("Error during login:", error);
     }
   };
+
   return (
     <div className="flex justify-center items-center h-screen">
       <div
@@ -70,10 +74,12 @@ const Login = () => {
               </label>
               <input
                 type="email"
+                name="email"
                 placeholder="Your Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="input input-bordered w-full max-w-xs"
+                required
               />
             </div>
             {/* password field */}
@@ -83,10 +89,12 @@ const Login = () => {
               </label>
               <input
                 type="password"
+                name="password"
                 placeholder="Your Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="input input-bordered w-full max-w-xs"
+                required
               />
             </div>
             <input

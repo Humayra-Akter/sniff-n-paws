@@ -1,11 +1,12 @@
 import React from "react";
-import DonationPrev from "./DonationPrev";
-import DonationAdd from "./DonationAdd";
+import DonationCustomer from "./DonationCustomer";
+import DonationNonCustomer from "./DonationNonCustomer";
 
 const Donation = () => {
   return (
     <div>
-      <DonationPrev></DonationPrev>
+      <DonationCustomer></DonationCustomer>
+      <DonationNonCustomer></DonationNonCustomer>
     </div>
   );
 };

@@ -11,6 +11,7 @@ const AdminUserRow = ({ admin }) => {
       <td>{admin[5]}</td>
       <td>{admin[6]}</td>
       <td>{admin[7]}</td>
+      <td>{admin[8]}</td>
     </tr>
   );
 };
