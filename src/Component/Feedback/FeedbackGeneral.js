@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import FeedbackAdd from "./FeedbackAdd";
 import FeedbackCard from "./FeedbackCard";
 import { Link } from "react-router-dom";
+import FeedbackAvg from "./FeedbackAvg";
 
 const FeedbackGeneral = () => {
   return (
@@ -91,8 +92,9 @@ const FeedbackGeneral = () => {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-2">
+      <div className="grid grid-cols-3">
         <FeedbackCard></FeedbackCard>
+        <FeedbackAvg></FeedbackAvg>
         <FeedbackAdd></FeedbackAdd>
       </div>
     </div>

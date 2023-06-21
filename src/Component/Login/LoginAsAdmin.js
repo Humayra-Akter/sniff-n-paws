@@ -26,9 +26,11 @@ const LoginAsAdmin = () => {
       </div>
     );
   }
+
   if (loading) {
     return <Loading></Loading>;
   }
+
   if (user) {
     navigate(from, { replace: true });
   }
@@ -38,17 +40,31 @@ const LoginAsAdmin = () => {
 
     try {
       const response = await axios.get(
-        `http://localhost:3002/customer_password/${email}/${password}`
+        `http://localhost:3002/admin_password/${email}/${password}`
       );
 
       const success = response.data.length > 0;
 
       if (success > 0) {
-        console.log("Login successful:", response.data[0][2]);
+        let valid = 1;
 
-        navigate(from, { replace: true });
+        axios
+          .get(`http://localhost:3002/login_insert/${email}/admin/1`)
+          .then((res) => {
+            if (res.data.errorNum === 20003) {
+              alert("Already Logged in");
+              console.error("Already logged in");
+              valid = 0;
+            }
+            if (valid === 1) {
+              console.log("Login successful:", response.data[0][2]);
+              navigate(from, { replace: true });
+            }
+          });
       } else {
-        console.error("Login failed:", email);
+        alert("Invalid email or password");
+        setEmail("");
+        setPassword("");
       }
     } catch (error) {
       console.error("Error during login:", error);

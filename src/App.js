@@ -33,8 +33,10 @@ import LoginAsAdmin from "./Component/Login/LoginAsAdmin";
 import LoginAsStaff from "./Component/Login/LoginAsStaff";
 import LoginAsVet from "./Component/Login/LoginAsVet";
 import LoginAsCustomer from "./Component/Login/LoginAsCustomer";
-// import { ToastContainer } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
+import FeedbackAll from "./Component/Feedback/FeedbackAll";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 function App() {
   return (
     <div>
@@ -44,6 +46,7 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/positive_feedback" element={<FeedbackPositive />} />
         <Route path="/negative_feedback" element={<FeedbackNegative />} />
+        <Route path="/feedbackAll" element={<FeedbackAll />} />
         <Route path="/feedback_admin_review" element={<FeedbackForAdmin />} />
         <Route
           path="/feedback_service_review"
@@ -87,6 +90,7 @@ function App() {
         <Route path="*" element={<Error />}></Route>
       </Routes>
       <Footer></Footer>
+      <ToastContainer />
     </div>
   );
 }

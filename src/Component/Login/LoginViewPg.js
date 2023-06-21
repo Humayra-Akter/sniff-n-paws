@@ -7,34 +7,34 @@ const LoginViewPg = () => {
       <div className="card w-96 bg-base-100 shadow-xl">
         <div className="card-body">
           <h2 className="text-center text-2xl text-blue-700 uppercase font-bold">
-            Login view
+            Login as
           </h2>
           <Link to="/loginAdmin">
             <input
-              className="btn btn-outline w-full font-bold bg-blue-100 text-xs text-blue-800"
+              className="btn btn-outline w-full font-bold bg-blue-100 text-sm text-blue-800"
               type="submit"
-              value="LOGIN AS ADMIN"
+              value="ADMIN"
             />
           </Link>
           <Link to="/loginStaff">
             <input
-              className="btn btn-outline w-full font-bold bg-blue-100 text-xs text-blue-800"
+              className="btn btn-outline w-full font-bold bg-blue-100 text-sm text-blue-800"
               type="submit"
-              value="LOGIN AS STAFF"
+              value="STAFF"
             />
           </Link>
           <Link to="/loginCustomer">
             <input
-              className="btn btn-outline w-full font-bold bg-blue-100 text-xs text-blue-800"
+              className="btn btn-outline w-full font-bold bg-blue-100 text-sm text-blue-800"
               type="submit"
-              value="LOGIN AS CUSTOMER"
+              value="CUSTOMER"
             />
           </Link>
           <Link to="/loginVet">
             <input
-              className="btn btn-outline w-full font-bold bg-blue-100 text-xs text-blue-800"
+              className="btn btn-outline w-full font-bold bg-blue-100 text-sm text-blue-800"
               type="submit"
-              value="LOGIN AS VET"
+              value="VET"
             />
           </Link>
         </div>
