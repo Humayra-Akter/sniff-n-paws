@@ -36,6 +36,8 @@ import LoginAsCustomer from "./Component/Login/LoginAsCustomer";
 import FeedbackAll from "./Component/Feedback/FeedbackAll";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Login from "./Component/Login/Logout";
+import Logout from "./Component/Login/Logout";
 
 function App() {
   return (
@@ -80,6 +82,7 @@ function App() {
         </Route>
         <Route path="/donate" element={<Donate />}></Route>
         <Route path="/about" element={<About />}></Route>
+        <Route path="/logout" element={<Logout />}></Route>
         <Route path="/loginView" element={<LoginViewPg />}></Route>
         <Route path="/loginAdmin" element={<LoginAsAdmin />}></Route>
         <Route path="/loginStaff" element={<LoginAsStaff />}></Route>

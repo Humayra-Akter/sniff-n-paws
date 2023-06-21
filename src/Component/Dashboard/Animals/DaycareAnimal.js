@@ -4,6 +4,7 @@ import HealthyDaycare from "./HealthyDaycare";
 import IsolatedDaycare from "./IsolatedDaycare";
 import DaycareInsert from "./DaycareInsert";
 import UnvaccinatedDaycare from "./UnvaccinatedDaycare";
+import DaycareAnimalRecordView from "./DaycareAnimalRecordView";
 
 const DaycareAnimal = () => {
   const [animals, setAnimals] = useState([]);
@@ -16,7 +17,8 @@ const DaycareAnimal = () => {
   }, []);
   return (
     <div>
-      <div className="pt-40 pb-40">
+      <DaycareAnimalRecordView></DaycareAnimalRecordView>
+      <div className="pt-12 pb-40">
         <div className="overflow-x-auto">
           <h1 className="font-semibold text-2xl text-blue-700">
             Total Daycare Animals: {animals.length}
@@ -32,6 +34,8 @@ const DaycareAnimal = () => {
                 <td>TYPE</td>
                 <td>COMING_DATE</td>
                 <td>RELEASE_DATE</td>
+                <td>cabin_no</td>
+                <td>health record id</td>
                 <td>customer_id</td>
               </tr>
             </thead>

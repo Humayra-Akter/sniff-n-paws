@@ -5,6 +5,7 @@ import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import Loading from "../Shared/Loading";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const LoginAsStaff = () => {
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
@@ -50,17 +51,19 @@ const LoginAsStaff = () => {
           .get(`http://localhost:3002/login_insert/${email}/staff/1`)
           .then((res) => {
             if (res.data.errorNum == 20003) {
-              alert("Already Logged in");
+              toast.error("Already Logged in");
               console.error("Already logged in");
               valid = 0;
             }
 
             if (valid == 1) {
+              toast.success("Login successful");
               console.log("Login successful:", response.data[0][2]);
               navigate(from, { replace: true });
             }
           });
       } else {
+        toast.success("Login failed");
         console.error("Login failed:", email);
       }
     } catch (error) {
@@ -124,13 +127,6 @@ const LoginAsStaff = () => {
               </Link>
             </small>
           </p>
-          <div className="divider">OR</div>
-          <button
-            onClick={() => signInWithGoogle()}
-            className="btn btn-outline font-bold bg-blue-100 text-xs text-blue-800"
-          >
-            Continue with Google
-          </button>
         </div>
       </div>
     </div>

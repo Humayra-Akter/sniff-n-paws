@@ -1,6 +1,6 @@
 import React from "react";
 
-const DaycareAnimalRow = ({ animal }) => {
+const DaycareAnimalRecordViewRow = ({ animal }) => {
   return (
     <tr>
       <th>{animal[0]}</th>
@@ -18,4 +18,4 @@ const DaycareAnimalRow = ({ animal }) => {
   );
 };
 
-export default DaycareAnimalRow;
+export default DaycareAnimalRecordViewRow;

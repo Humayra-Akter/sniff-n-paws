@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import auth from "../../firebase.init";
 import Loading from "../Shared/Loading";
 import { toast } from "react-toastify";
 
-const LoginAsAdmin = () => {
+const Logout = () => {
   const [user, setUser] = useState(null);
+  const [signInWithGoogle, guser, gloading, gerror] = useSignInWithGoogle(auth);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [email, setEmail] = useState("");
@@ -19,14 +22,14 @@ const LoginAsAdmin = () => {
       : "/";
 
   console.log(from);
-  if (error) {
+  if (error || gerror) {
     return (
       <div>
         <p>Error: {error.message}</p>
       </div>
     );
   }
-  if (loading) {
+  if (gloading || loading) {
     return <Loading></Loading>;
   }
 
@@ -89,7 +92,7 @@ const LoginAsAdmin = () => {
       <div className="card w-96 bg-base-100 shadow-xl">
         <div className="card-body">
           <h1 className="text-center text-2xl text-blue-700 uppercase font-bold">
-            {user ? `Welcome, ${user}!` : "Please log in"}
+            {user ? "Please log out" : `Continue as, ${user}!`}
           </h1>
           {user ? (
             <button
@@ -99,56 +102,14 @@ const LoginAsAdmin = () => {
               Logout
             </button>
           ) : (
-            <form onSubmit={handleFormSubmit}>
-              <div className="form-control w-full max-w-xs">
-                <label className="label">
-                  <span className="label-text">Email</span>
-                </label>
-                <input
-                  type="email"
-                  placeholder="Your Email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="input input-bordered w-full max-w-xs"
-                  required
-                />
-              </div>
-              {/* password field */}
-              <div className="form-control w-full max-w-xs pb-7">
-                <label className="label">
-                  <span className="label-text">Password</span>
-                </label>
-                <input
-                  type="password"
-                  placeholder="Your Password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  className="input input-bordered w-full max-w-xs"
-                  required
-                />
-              </div>
-              <button
-                className="btn btn-outline w-full font-bold bg-blue-100 text-xs text-blue-800"
-                type="submit"
-              >
-                Login
-              </button>
-            </form>
+            <p>Already logged in</p>
           )}
           {loading && <div>Loading...</div>}
           {error && <div>Error: {error}</div>}
-          <p className="text-center">
-            <small className="font-semibold">
-              New to sniff-n-paws?
-              <Link className="text-blue-700" to="/signup">
-                Create new account
-              </Link>
-            </small>
-          </p>
         </div>
       </div>
     </div>
   );
 };
 
-export default LoginAsAdmin;
+export default Logout;
