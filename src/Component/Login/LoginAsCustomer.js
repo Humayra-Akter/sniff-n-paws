@@ -1,12 +1,18 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import auth from "../../firebase.init";
 import Loading from "../Shared/Loading";
 import { toast } from "react-toastify";
+import Login from "./Logout";
+import Logout from "./Logout";
 
-const LoginAsAdmin = () => {
+const LoginAsCustomer = () => {
   const [user, setUser] = useState(null);
+  const [signInWithGoogle, guser, gloading, gerror] = useSignInWithGoogle(auth);
   const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState(false);
   const [error, setError] = useState(null);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -19,14 +25,14 @@ const LoginAsAdmin = () => {
       : "/";
 
   console.log(from);
-  if (error) {
+  if (error || gerror) {
     return (
       <div>
         <p>Error: {error.message}</p>
       </div>
     );
   }
-  if (loading) {
+  if (gloading || loading) {
     return <Loading></Loading>;
   }
 
@@ -55,6 +61,7 @@ const LoginAsAdmin = () => {
               setLoading(false);
               setError(null);
               toast.success("Successfully logged in");
+              setStatus(1);
             }
           });
       } else {
@@ -67,7 +74,7 @@ const LoginAsAdmin = () => {
     } catch (error) {
       setLoading(false);
       setError("Error during login");
-      toast.error("Error during login");
+      toast.error("Error during login", error);
       console.error("Error during login:", error);
     }
   };
@@ -78,64 +85,60 @@ const LoginAsAdmin = () => {
   };
 
   const handleLogout = () => {
-    // Perform any necessary actions for logout
     setUser(null);
     setEmail("");
     setPassword("");
+    setStatus(0);
   };
 
   return (
     <div className="flex justify-center items-center h-screen">
       <div className="card w-96 bg-base-100 shadow-xl">
         <div className="card-body">
-          <h1 className="text-center text-2xl text-blue-700 uppercase font-bold">
-            {user ? `Welcome, ${user}!` : "Please log in"}
+          <h1 className="text-center text-xl text-blue-700 font-extrabold">
+            {user ? `Welcome, ${user}!` : "Please login as ADMIN"}
           </h1>
-          {user ? (
+          (
+          <form onSubmit={handleFormSubmit}>
+            <div className="form-control pt-5 w-full max-w-xs">
+              <label className="label">
+                <span className="label-text text-blue-700 font-bold text-xs">
+                  Email
+                </span>
+              </label>
+              <input
+                type="email"
+                placeholder="Your Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="input input-bordered w-full max-w-xs"
+                required
+              />
+            </div>
+            {/* password field */}
+            <div className="form-control w-full max-w-xs pb-7">
+              <label className="label">
+                <span className="label-text text-blue-700 font-bold text-xs">
+                  Password
+                </span>
+              </label>
+              <input
+                type="password"
+                placeholder="Your Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="input input-bordered w-full max-w-xs"
+                required
+              />
+            </div>
             <button
               className="btn btn-outline w-full font-bold bg-blue-100 text-xs text-blue-800"
-              onClick={handleLogout}
+              type="submit"
             >
-              Logout
+              Login
             </button>
-          ) : (
-            <form onSubmit={handleFormSubmit}>
-              <div className="form-control w-full max-w-xs">
-                <label className="label">
-                  <span className="label-text">Email</span>
-                </label>
-                <input
-                  type="email"
-                  placeholder="Your Email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="input input-bordered w-full max-w-xs"
-                  required
-                />
-              </div>
-              {/* password field */}
-              <div className="form-control w-full max-w-xs pb-7">
-                <label className="label">
-                  <span className="label-text">Password</span>
-                </label>
-                <input
-                  type="password"
-                  placeholder="Your Password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  className="input input-bordered w-full max-w-xs"
-                  required
-                />
-              </div>
-              <button
-                className="btn btn-outline w-full font-bold bg-blue-100 text-xs text-blue-800"
-                type="submit"
-              >
-                Login
-              </button>
-            </form>
-          )}
-          {loading && <div>Loading...</div>}
+          </form>
+          ){loading && <div>Loading...</div>}
           {error && <div>Error: {error}</div>}
           <p className="text-center">
             <small className="font-semibold">
@@ -151,4 +154,4 @@ const LoginAsAdmin = () => {
   );
 };
 
-export default LoginAsAdmin;
+export default LoginAsCustomer;

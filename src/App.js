@@ -82,9 +82,9 @@ function App() {
         </Route>
         <Route path="/donate" element={<Donate />}></Route>
         <Route path="/about" element={<About />}></Route>
+        <Route path="/loginAdmin" element={<LoginAsAdmin />}></Route>
         <Route path="/logout" element={<Logout />}></Route>
         <Route path="/loginView" element={<LoginViewPg />}></Route>
-        <Route path="/loginAdmin" element={<LoginAsAdmin />}></Route>
         <Route path="/loginStaff" element={<LoginAsStaff />}></Route>
         <Route path="/loginVet" element={<LoginAsVet />}></Route>
         <Route path="/loginCustomer" element={<LoginAsCustomer />}></Route>

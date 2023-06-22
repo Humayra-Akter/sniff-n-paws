@@ -1,18 +1,23 @@
-import React, { useRef, useState } from "react";
-import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
-import img from "../../assets/images/paws-gb0cab7af7_1280.png";
+import React, { useState } from "react";
+import axios from "axios";
 import { useSignInWithGoogle } from "react-firebase-hooks/auth";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 import Loading from "../Shared/Loading";
-import axios from "axios";
 import { toast } from "react-toastify";
+import Login from "./Logout";
+import Logout from "./Logout";
 
 const LoginAsVet = () => {
-  const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
-  const navigate = useNavigate();
-  const location = useLocation();
+  const [user, setUser] = useState(null);
+  const [signInWithGoogle, guser, gloading, gerror] = useSignInWithGoogle(auth);
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState(false);
+  const [error, setError] = useState(null);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  const location = useLocation();
 
   let from =
     location.state && location.state.from && location.state.from.pathname
@@ -20,22 +25,19 @@ const LoginAsVet = () => {
       : "/";
 
   console.log(from);
-  if (error) {
+  if (error || gerror) {
     return (
       <div>
         <p>Error: {error.message}</p>
       </div>
     );
   }
-  if (loading) {
+  if (gloading || loading) {
     return <Loading></Loading>;
   }
-  if (user) {
-    navigate(from, { replace: true });
-  }
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
+  const handleLogin = async () => {
+    setLoading(true);
 
     try {
       const response = await axios.get(
@@ -44,51 +46,68 @@ const LoginAsVet = () => {
 
       const success = response.data.length > 0;
 
-      if (success > 0) {
-        let valid = 1;
-
+      if (success) {
         axios
           .get(`http://localhost:3002/login_insert/${email}/vet/1`)
           .then((res) => {
-            if (res.data.errorNum == 20003) {
-              toast.error("Already Logged in");
-              console.error("Already logged in");
-              valid = 0;
-            }
-
-            if (valid == 1) {
-              toast.success("Login successful");
-              console.log("Login successful:", response.data[0][2]);
-              navigate(from, { replace: true });
+            if (res.data.errorNum === 20003) {
+              setLoading(false);
+              setError("Already logged in");
+              toast.error("Already logged in");
+              setEmail("");
+              setPassword("");
+            } else {
+              setUser(response.data[0][2]);
+              setLoading(false);
+              setError(null);
+              toast.success("Successfully logged in");
+              setStatus(1);
             }
           });
       } else {
-        toast.error("Login failed");
-        console.error("Login failed:", email);
+        setLoading(false);
+        setError("Invalid email or password");
+        toast.error("Invalid email or password");
+        setEmail("");
+        setPassword("");
       }
     } catch (error) {
+      setLoading(false);
+      setError("Error during login");
+      toast.error("Error during login", error);
       console.error("Error during login:", error);
     }
   };
 
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    handleLogin();
+  };
+
+  const handleLogout = () => {
+    setUser(null);
+    setEmail("");
+    setPassword("");
+    setStatus(0);
+  };
+
   return (
     <div className="flex justify-center items-center h-screen">
-      <div
-       
-        className="card w-96 bg-base-100 shadow-xl"
-      >
+      <div className="card w-96 bg-base-100 shadow-xl">
         <div className="card-body">
-          <h2 className="text-center text-2xl text-blue-700 uppercase font-bold">
-            Login
-          </h2>
-          <form onSubmit={handleLogin}>
-            <div className="form-control w-full max-w-xs">
+          <h1 className="text-center text-xl text-blue-700 font-extrabold">
+            {user ? `Welcome, ${user}!` : "Please login as ADMIN"}
+          </h1>
+          (
+          <form onSubmit={handleFormSubmit}>
+            <div className="form-control pt-5 w-full max-w-xs">
               <label className="label">
-                <span className="label-text">Email</span>
+                <span className="label-text text-blue-700 font-bold text-xs">
+                  Email
+                </span>
               </label>
               <input
                 type="email"
-                name="email"
                 placeholder="Your Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -99,11 +118,12 @@ const LoginAsVet = () => {
             {/* password field */}
             <div className="form-control w-full max-w-xs pb-7">
               <label className="label">
-                <span className="label-text">Password</span>
+                <span className="label-text text-blue-700 font-bold text-xs">
+                  Password
+                </span>
               </label>
               <input
                 type="password"
-                name="password"
                 placeholder="Your Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -111,12 +131,15 @@ const LoginAsVet = () => {
                 required
               />
             </div>
-            <input
+            <button
               className="btn btn-outline w-full font-bold bg-blue-100 text-xs text-blue-800"
               type="submit"
-              value="LOGIN"
-            />
+            >
+              Login
+            </button>
           </form>
+          ){loading && <div>Loading...</div>}
+          {error && <div>Error: {error}</div>}
           <p className="text-center">
             <small className="font-semibold">
               New to sniff-n-paws?
