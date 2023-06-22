@@ -6,6 +6,7 @@ const CustomerPricingRow = ({ customerPricing }) => {
       <th>{customerPricing[0]}</th>
       <td>{customerPricing[1]}</td>
       <td>{customerPricing[2]}</td>
+      <td>{customerPricing[3]}</td>
     </tr>
   );
 };

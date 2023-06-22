@@ -1,11 +1,7 @@
-import React from 'react';
+import React from "react";
 
 const DashboardVet = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+  return <div></div>;
 };
 
 export default DashboardVet;

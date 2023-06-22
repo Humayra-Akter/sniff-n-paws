@@ -7,6 +7,7 @@ const CustomerInsert = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    password: "",
     gender: "",
     city: "",
     street: "",
@@ -16,7 +17,7 @@ const CustomerInsert = () => {
     phone: "",
     designation: "",
   });
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value.toString() });
@@ -24,12 +25,10 @@ const CustomerInsert = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // You can send the formData to the backend for further processing
-    //console.log(formData);
-    // TODO: Send the formData to the backend API for insertion
-    let adminUrl = `http://localhost:3002/customer_insert/${formData.name}/${formData.email}/${formData.gender}/${formData.city}/${formData.street}/${formData.house}/${formData.dob}/${formData.phone}`;
+    let adminUrl = `http://localhost:3002/customer_insert/${formData.name}/${formData.email}/${formData.gender}/${formData.city}
+    /${formData.street}/${formData.house}/${formData.dob}/${formData.phone}/${formData.password}`;
     fetch(adminUrl);
-    //navigate("/dashboard");
+    navigate("/loginView");
   };
 
   return (
@@ -37,7 +36,7 @@ const CustomerInsert = () => {
       <div className="card w-96 bg-base-100 shadow-xl">
         <div className="card-body">
           <h2 className="text-center text-2xl text-blue-700 uppercase font-bold">
-            Add Customer
+            Sign up
           </h2>
           <form onSubmit={handleSubmit}>
             <div>
@@ -59,6 +58,17 @@ const CustomerInsert = () => {
                   id="email"
                   name="email"
                   value={formData.email}
+                  className="input input-bordered input-sm  w-full max-w-xs"
+                  onChange={handleInputChange}
+                />
+              </div>
+              <div>
+                <label htmlFor="password">Password:</label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  value={formData.password}
                   className="input input-bordered input-sm  w-full max-w-xs"
                   onChange={handleInputChange}
                 />

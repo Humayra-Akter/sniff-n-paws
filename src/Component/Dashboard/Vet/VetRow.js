@@ -11,6 +11,8 @@ const VetRow = ({ vet }) => {
       <td>{vet[5]}</td>
       <td>{vet[6]}</td>
       <td>{vet[7]}</td>
+      <td>{vet[8]}</td>
+      <td>{vet[9]}</td>
     </tr>
   );
 };

@@ -38,6 +38,10 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Login from "./Component/Login/Logout";
 import Logout from "./Component/Login/Logout";
+import DashboardCustomer from "./Component/DashboardCustomer/DashboardCustomer";
+import DashboardStuff from "./Component/DashboardStuff/DashboardStuff";
+import DashboardVet from "./Component/DashboardVet/DashboardVet";
+import { useState } from "react";
 
 function App() {
   return (
@@ -60,14 +64,15 @@ function App() {
         />
         <Route path="/feedback_staff_review" element={<FeedbackForStaff />} />
         <Route path="/signup" element={<Signup />}></Route>
-        <Route
+        {/* <Route
           path="dashboard"
           element={
             <RequireAuth>
               <Dashboard />
             </RequireAuth>
           }
-        >
+        > */}
+        <Route path="dashboard" element={<Dashboard />}>
           <Route index element={<Admin />}></Route>
           <Route path="staff" element={<Staff />}></Route>
           <Route path="vet" element={<Vet />}></Route>
@@ -79,6 +84,15 @@ function App() {
           <Route path="feedback" element={<Feedback />}></Route>
           <Route path="daycareAnimal" element={<DaycareAnimal />}></Route>
           <Route path="rescuedAnimal" element={<RescuedAnimal />}></Route>
+        </Route>
+        <Route path="/dashboardCustomer" element={<DashboardCustomer />}>
+          <Route index element={<Admin />}></Route>
+        </Route>
+        <Route path="/dashboardStaff" element={<DashboardStuff />}>
+          <Route index element={<Admin />}></Route>
+        </Route>
+        <Route path="/dashboardVet" element={<DashboardVet />}>
+          <Route index element={<Admin />}></Route>
         </Route>
         <Route path="/donate" element={<Donate />}></Route>
         <Route path="/about" element={<About />}></Route>

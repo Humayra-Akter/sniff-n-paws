@@ -98,7 +98,7 @@ const LoginAsCustomer = () => {
           <h1 className="text-center text-xl text-blue-700 font-extrabold">
             {user ? `Welcome, ${user}!` : "Please login as ADMIN"}
           </h1>
-          (
+
           <form onSubmit={handleFormSubmit}>
             <div className="form-control pt-5 w-full max-w-xs">
               <label className="label">
@@ -131,15 +131,17 @@ const LoginAsCustomer = () => {
                 required
               />
             </div>
-            <button
-              className="btn btn-outline w-full font-bold bg-blue-100 text-xs text-blue-800"
-              type="submit"
-            >
-              Login
-            </button>
+            <Link to="/dashboardCustomer">
+              <button
+                className="btn btn-outline w-full font-bold bg-blue-100 text-xs text-blue-800"
+                type="submit"
+              >
+                Login
+              </button>
+            </Link>
+            {error && <div>Error: {error}</div>}
           </form>
-          ){loading && <div>Loading...</div>}
-          {error && <div>Error: {error}</div>}
+          {loading && <div>Loading...</div>}
           <p className="text-center">
             <small className="font-semibold">
               New to sniff-n-paws?

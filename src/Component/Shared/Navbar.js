@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import img from "../../assets/images/pets-g1111451cc_1280.jpg";
 import img2 from "../../assets/images/favicon.ico";
 import { Link } from "react-router-dom";
@@ -9,15 +9,59 @@ import useLoginUsers from "../../hooks/useLoginUsers";
 
 const Navbar = () => {
   const [user, loading, error] = useAuthState(auth);
-  
+  const [status, setStatus] = useState(false);
+
+  useEffect(() => {
+    fetch("http://localhost:3002/login_status")
+      .then((response) => response.json())
+      .then((data) => {
+        const statusFromBackend = data.isStatusTrue;
+        setStatus(statusFromBackend);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  }, []);
+
   const [handleLogin] = useLoginUsers();
-  if (handleLogin.success == true) {
+  if (handleLogin.success === true) {
   }
 
   const logout = () => {
     signOut(auth);
     localStorage.removeItem("accessToken");
+    setStatus(false);
   };
+  const renderLoginOrSignOut = () => {
+    if (user) {
+      if (status) {
+        return (
+          <Link
+            className="w-full h-full btn btn-ghost font-black uppercase text-center text-sm text-blue-700"
+            onClick={logout}
+          >
+            Sign Out
+          </Link>
+        );
+      } else {
+        return <Link to="/logout"></Link>;
+      }
+    } else {
+      if (status) {
+        return (
+          <Link
+            className="w-full h-full btn btn-ghost font-black uppercase text-center text-sm text-blue-700"
+            to={"/loginView"}
+          >
+            Login
+          </Link>
+        );
+      } else {
+        return null;
+      }
+    }
+  };
+
   const menuItems = (
     <>
       <li>
@@ -79,14 +123,10 @@ const Navbar = () => {
           About
         </Link>
       </li>
+      <li>{renderLoginOrSignOut()}</li>
       <li>
-        {user ? (
-          <Link
-            className="w-full h-full btn btn-ghost font-black uppercase text-center text-sm text-blue-700"
-            onClick={logout}
-          >
-            Sign Out
-          </Link>
+        {status ? (
+          <Link to="/logout">Sign Out</Link>
         ) : (
           <Link
             className="w-full h-full btn btn-ghost font-black uppercase text-center text-sm text-blue-700"
@@ -95,6 +135,14 @@ const Navbar = () => {
             Login
           </Link>
         )}
+      </li>
+      <li>
+        <Link
+          className="w-full h-full font-black uppercase text-center text-sm text-blue-700"
+          to={"/logout"}
+        >
+          logout
+        </Link>
       </li>
     </>
   );
@@ -110,7 +158,7 @@ const Navbar = () => {
               {menuItems}
             </ul>
           </div>
-          <img height={20} width={60} src={img2} />
+          <img height={20} width={60} src={img2} alt="" />
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal p-0">{menuItems}</ul>

@@ -28,6 +28,9 @@ const CustomerPricing = () => {
                   name
                 </td>
                 <td className="uppercase text-xs font-extrabold text-left">
+                  email
+                </td>
+                <td className="uppercase text-xs font-extrabold text-left">
                   pricing
                 </td>
               </tr>

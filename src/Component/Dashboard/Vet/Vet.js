@@ -53,6 +53,12 @@ const Vet = () => {
                 <td className="uppercase text-xs font-extrabold text-left">
                   Salary
                 </td>
+                <td className="uppercase text-xs font-extrabold text-left">
+                  qualification
+                </td>
+                <td className="uppercase text-xs font-extrabold text-left">
+                  phone
+                </td>
               </tr>
             </thead>
             <tbody>
