@@ -1,7 +1,6 @@
-/* eslint-disable no-restricted-globals */
 import React, { useState } from "react";
 
-const RescuedInsert = () => {
+const VetUpdateHealthRecord = () => {
   const [formData, setFormData] = useState("");
 
   const handleInputChange = (e) => {
@@ -10,37 +9,36 @@ const RescuedInsert = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let adminUrl = `http://localhost:3002/rescued_animal_insert/${formData.age}/${formData.breed}/${formData.weight}/${formData.rate}/${formData.type}/${formData.res_from}/${formData.is_adopt}/${formData.adopt_date}`;
+    let adminUrl = `http://localhost:3002/health_record_insert/${formData.rabies}/${formData.rab_date}/${formData.flu}/${formData.flu_date}/${formData.spay_neuter}/${formData.animal_identifier}`;
     fetch(adminUrl);
-  }; //:age/:breed/:weight/:rate/:type/:res_from/:is_adopt/:adopt_date
-
+  }; //health_record_insert/:rabies/:rab_date/:flu/:flu_date/:spay_neuter/:animal_identifier",
   return (
-    <div className="flex justify-center pt-40 items-center h-screen">
+    <div className="flex justify-center items-center h-screen">
       <div className="card w-96 bg-blue-50 shadow-xl">
         <div className="card-body">
           <h2 className="text-center text-2xl text-blue-700 uppercase font-bold">
-            Insert Rescued animal
+            insert health record
           </h2>
           <form onSubmit={handleSubmit}>
             <div>
               <div>
-                <label htmlFor="age">Age:</label>
+                <label htmlFor="rabies">rabies:</label>
                 <input
                   type="text"
-                  id="age"
-                  name="age"
+                  id="rabies"
+                  name="rabies"
                   className="input input-bordered input-sm w-full max-w-xs"
-                  value={formData.age}
+                  value={formData.rabies}
                   onChange={handleInputChange}
                 />
               </div>
               <div>
-                <label htmlFor="breed">Breed:</label>
+                <label htmlFor="rab_date">rab_date:</label>
                 <input
                   type="text"
-                  id="breed"
-                  name="breed"
-                  value={formData.breed}
+                  id="rab_date"
+                  name="rab_date"
+                  value={formData.rab_date}
                   className="input input-bordered input-sm  w-full max-w-xs"
                   onChange={handleInputChange}
                 />
@@ -48,23 +46,12 @@ const RescuedInsert = () => {
             </div>
             <div>
               <div>
-                <label htmlFor="weight">Weight:</label>
+                <label htmlFor="flu">flu:</label>
                 <input
                   type="text"
-                  id="weight"
-                  name="weight"
-                  value={formData.weight}
-                  className="input input-bordered input-sm w-full max-w-xs"
-                  onChange={handleInputChange}
-                />
-              </div>
-              <div>
-                <label htmlFor="rate">Rate:</label>
-                <input
-                  type="text"
-                  id="rate"
-                  name="rate"
-                  value={formData.rate}
+                  id="flu"
+                  name="flu"
+                  value={formData.flu}
                   className="input input-bordered input-sm w-full max-w-xs"
                   onChange={handleInputChange}
                 />
@@ -72,51 +59,38 @@ const RescuedInsert = () => {
             </div>
             <div>
               <div>
-                <label htmlFor="type">Type:</label>
+                <label htmlFor="flu_date">flu_date:</label>
                 <input
                   type="text"
-                  id="type"
-                  name="type"
+                  id="flu_date"
+                  name="flu_date"
                   className="input input-bordered input-sm w-full max-w-xs"
-                  value={formData.type}
+                  value={formData.flu_date}
                   onChange={handleInputChange}
                 />
               </div>
               <div>
-                <label htmlFor="res_from">res_from</label>
+                <label htmlFor="spay_neuter">spay_neuter:</label>
                 <input
                   type="text"
-                  id="res_from"
-                  name="res_from"
+                  id="spay_neuter"
+                  name="spay_neuter"
                   className="input input-bordered input-sm w-full max-w-xs"
-                  value={formData.res_from}
+                  value={formData.spay_neuter}
                   onChange={handleInputChange}
                 />
               </div>
             </div>
             <div>
-              <label htmlFor="is_adopt">is_adopt</label>
+              <label htmlFor="animal_identifier">animal_identifier:</label>
               <input
                 type="text"
-                id="is_adopt"
-                name="is_adopt"
+                id="animal_identifier"
+                name="animal_identifier"
                 className="input input-bordered input-sm w-full max-w-xs"
-                value={formData.is_adopt}
+                value={formData.animal_identifier}
                 onChange={handleInputChange}
               />
-            </div>
-            <div className="pb-5">
-              <div>
-                <label htmlFor="adopt_date">adopt_date</label>
-                <input
-                  type="text"
-                  id="adopt_date"
-                  name="adopt_date"
-                  className="input input-bordered input-sm w-full max-w-xs"
-                  value={formData.adopt_date}
-                  onChange={handleInputChange}
-                />
-              </div>
             </div>
             <button
               className="btn btn-accent w-full max-w-xs btn-outline font-semibold text-blue-200 bg-blue-100"
@@ -131,4 +105,4 @@ const RescuedInsert = () => {
   );
 };
 
-export default RescuedInsert;
+export default VetUpdateHealthRecord;

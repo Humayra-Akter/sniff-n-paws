@@ -27,41 +27,6 @@ const Navbar = () => {
   if (handleLogin.success === true) {
   }
 
-  const logout = () => {
-    signOut(auth);
-    localStorage.removeItem("accessToken");
-    setStatus(false);
-  };
-  const renderLoginOrSignOut = () => {
-    if (user) {
-      if (status) {
-        return (
-          <Link
-            className="w-full h-full btn btn-ghost font-black uppercase text-center text-sm text-blue-700"
-            onClick={logout}
-          >
-            Sign Out
-          </Link>
-        );
-      } else {
-        return <Link to="/logout"></Link>;
-      }
-    } else {
-      if (status) {
-        return (
-          <Link
-            className="w-full h-full btn btn-ghost font-black uppercase text-center text-sm text-blue-700"
-            to={"/loginView"}
-          >
-            Login
-          </Link>
-        );
-      } else {
-        return null;
-      }
-    }
-  };
-
   const menuItems = (
     <>
       <li>
@@ -80,16 +45,15 @@ const Navbar = () => {
           services
         </Link>
       </li>
-      {user && (
-        <li>
-          <Link
-            className="w-full h-full font-black uppercase text-center text-sm text-blue-700"
-            to={"/dashboard"}
-          >
-            Dashboard
-          </Link>
-        </li>
-      )}
+
+      <li>
+        <Link
+          className="w-full h-full font-black uppercase text-center text-sm text-blue-700"
+          to={"/dashboard"}
+        >
+          Dashboard
+        </Link>
+      </li>
 
       <li>
         <Link
@@ -123,27 +87,33 @@ const Navbar = () => {
           About
         </Link>
       </li>
-      <li>{renderLoginOrSignOut()}</li>
-      <li>
-        {status ? (
-          <Link to="/logout">Sign Out</Link>
-        ) : (
-          <Link
-            className="w-full h-full btn btn-ghost font-black uppercase text-center text-sm text-blue-700"
-            to={"/loginView"}
-          >
-            Login
-          </Link>
-        )}
-      </li>
       <li>
         <Link
           className="w-full h-full font-black uppercase text-center text-sm text-blue-700"
-          to={"/logout"}
+          to={"/loginView"}
         >
-          logout
+          login
         </Link>
       </li>
+      {status ? (
+        <li>
+          <Link
+            className="w-full h-full font-black uppercase text-center text-sm text-blue-700"
+            to={"/loginView"}
+          >
+            login
+          </Link>
+        </li>
+      ) : (
+        <li>
+          <Link
+            className="w-full h-full font-black uppercase text-center text-sm text-blue-700"
+            to={"/logout"}
+          >
+            logout
+          </Link>
+        </li>
+      )}
     </>
   );
   return (
