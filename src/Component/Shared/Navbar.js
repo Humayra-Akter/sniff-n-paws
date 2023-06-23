@@ -16,6 +16,7 @@ const Navbar = () => {
       .then((response) => response.json())
       .then((data) => {
         const statusFromBackend = data.isStatusTrue;
+        console.log(data.isStatusTrue);
         setStatus(statusFromBackend);
       })
       .catch((error) => {
@@ -45,16 +46,6 @@ const Navbar = () => {
           services
         </Link>
       </li>
-
-      <li>
-        <Link
-          className="w-full h-full font-black uppercase text-center text-sm text-blue-700"
-          to={"/dashboard"}
-        >
-          Dashboard
-        </Link>
-      </li>
-
       <li>
         <Link
           className="w-full h-full font-black uppercase text-center text-sm text-blue-700"
@@ -87,6 +78,54 @@ const Navbar = () => {
           About
         </Link>
       </li>
+      <div>
+        <div class="dropdown dropdown-bottom">
+          <label tabindex="0" className="btn btn-ghost bg-blue-50">
+            <small className="text-center uppercase text-sm font-black text-blue-700">
+              Dashboard
+            </small>
+          </label>
+          <ul
+            tabindex="0"
+            class="dropdown-content menu p-2 shadow bg-blue-50 rounded-box w-52"
+          >
+            <li>
+              <Link
+                to="/Dashboard"
+                className="w-full uppercase h-full font-bold text-center text-sm text-blue-700"
+              >
+                👉 Admin
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/dashboardStaff"
+                className="w-full uppercase h-full font-bold text-center text-sm text-blue-700"
+              >
+                👉 staff
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/dashboardCustomer"
+                className="w-full uppercase h-full font-bold text-center text-sm text-blue-700"
+              >
+                👉 Customer
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                to="/dashboardVet"
+                className="w-full uppercase h-full font-bold text-center text-sm text-blue-700"
+              >
+                👉 Vet
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+
       <li>
         <Link
           className="w-full h-full font-black uppercase text-center text-sm text-blue-700"

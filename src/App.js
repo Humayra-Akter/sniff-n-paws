@@ -36,12 +36,12 @@ import LoginAsCustomer from "./Component/Login/LoginAsCustomer";
 import FeedbackAll from "./Component/Feedback/FeedbackAll";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Login from "./Component/Login/Logout";
 import Logout from "./Component/Login/Logout";
 import DashboardCustomer from "./Component/DashboardCustomer/DashboardCustomer";
 import DashboardStuff from "./Component/DashboardStuff/DashboardStuff";
 import DashboardVet from "./Component/DashboardVet/DashboardVet";
-import { useState } from "react";
+import VetHistory from "./Component/DashboardVet/VetHistory";
+import CustomerSelfInfo from "./Component/DashboardCustomer/CustomerSelfInfo";
 
 function App() {
   return (
@@ -64,14 +64,6 @@ function App() {
         />
         <Route path="/feedback_staff_review" element={<FeedbackForStaff />} />
         <Route path="/signup" element={<Signup />}></Route>
-        {/* <Route
-          path="dashboard"
-          element={
-            <RequireAuth>
-              <Dashboard />
-            </RequireAuth>
-          }
-        > */}
         <Route path="dashboard" element={<Dashboard />}>
           <Route index element={<Admin />}></Route>
           <Route path="staff" element={<Staff />}></Route>
@@ -86,13 +78,13 @@ function App() {
           <Route path="rescuedAnimal" element={<RescuedAnimal />}></Route>
         </Route>
         <Route path="/dashboardCustomer" element={<DashboardCustomer />}>
-          <Route index element={<Admin />}></Route>
+          <Route index element={<CustomerSelfInfo />}></Route>
         </Route>
         <Route path="/dashboardStaff" element={<DashboardStuff />}>
-          <Route index element={<Admin />}></Route>
+          <Route index element={<DashboardStuff />}></Route>
         </Route>
         <Route path="/dashboardVet" element={<DashboardVet />}>
-          <Route index element={<Admin />}></Route>
+          <Route index element={<VetHistory />}></Route>
         </Route>
         <Route path="/donate" element={<Donate />}></Route>
         <Route path="/about" element={<About />}></Route>

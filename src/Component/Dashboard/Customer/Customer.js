@@ -46,7 +46,6 @@ const Customer = () => {
             <br />
             Total searched customers: {searchResult.length}
           </h1>
-
           <table className="table">
             <thead>
               <tr>

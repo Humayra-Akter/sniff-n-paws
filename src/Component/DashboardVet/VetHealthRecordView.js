@@ -12,7 +12,7 @@ const VetHealthRecordView = () => {
   }, []);
   return (
     <div>
-      <div className="pt-12 pb-40">
+      <div className="pt-40 pb-40">
         <div className="overflow-x-auto">
           <h1 className="font-semibold text-2xl text-blue-700">
             Total Pending Animals: {animals.length}
