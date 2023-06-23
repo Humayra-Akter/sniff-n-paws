@@ -3,18 +3,8 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const Logout = () => {
-  const [status, setStatus] = useState(0);
-
   const handleLogout = () => {
-    fetch("http://localhost:3002/logout")
-      .then((res) => res.json())
-      .then((data) => {
-        setStatus(data.status);
-        toast.success("Successfully logged out");
-      })
-      .catch((error) => {
-        console.log("Error:", error);
-      });
+    fetch("http://localhost:3002/logout");
   };
 
   return (

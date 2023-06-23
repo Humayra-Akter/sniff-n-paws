@@ -32,7 +32,7 @@ const Navbar = () => {
     <>
       <li>
         <Link
-          className="w-full h-full font-black uppercase text-center text-sm text-blue-700"
+          className="w-full pt-3 h-full font-black uppercase text-center text-sm text-blue-700"
           to={"/"}
         >
           Home
@@ -40,7 +40,7 @@ const Navbar = () => {
       </li>
       <li>
         <Link
-          className="w-full h-full font-black uppercase text-center text-sm text-blue-700"
+          className="w-full pt-3 h-full font-black uppercase text-center text-sm text-blue-700"
           to={"/services"}
         >
           services
@@ -48,7 +48,7 @@ const Navbar = () => {
       </li>
       <li>
         <Link
-          className="w-full h-full font-black uppercase text-center text-sm text-blue-700"
+          className="w-full pt-3  h-full font-black uppercase text-center text-sm text-blue-700"
           to={"/feedbackGeneral"}
         >
           feedback
@@ -56,7 +56,7 @@ const Navbar = () => {
       </li>
       <li>
         <Link
-          className="w-full h-full font-black uppercase text-center text-sm text-blue-700"
+          className="w-full  pt-3 h-full font-black uppercase text-center text-sm text-blue-700"
           to={"/donate"}
         >
           Donate
@@ -64,7 +64,7 @@ const Navbar = () => {
       </li>
       <li>
         <Link
-          className="w-full h-full font-black uppercase text-center text-sm text-blue-700"
+          className="w-full pt-3  h-full font-black uppercase text-center text-sm text-blue-700"
           to={"/contact"}
         >
           contact
@@ -72,7 +72,7 @@ const Navbar = () => {
       </li>
       <li>
         <Link
-          className="w-full h-full font-black uppercase text-center text-sm text-blue-700"
+          className="w-full pt-3  h-full font-black uppercase text-center text-sm text-blue-700"
           to={"/about"}
         >
           About
@@ -81,7 +81,7 @@ const Navbar = () => {
       <div>
         <div class="dropdown dropdown-bottom">
           <label tabindex="0" className="btn btn-ghost bg-blue-50">
-            <small className="text-center uppercase text-sm font-black text-blue-700">
+            <small className="uppercase text-sm font-black text-blue-700">
               Dashboard
             </small>
           </label>
@@ -128,7 +128,7 @@ const Navbar = () => {
 
       <li>
         <Link
-          className="w-full h-full font-black uppercase text-center text-sm text-blue-700"
+          className="w-full  pt-3 h-full font-black uppercase text-center text-sm text-blue-700"
           to={"/loginView"}
         >
           login
@@ -137,7 +137,7 @@ const Navbar = () => {
       {status ? (
         <li>
           <Link
-            className="w-full h-full font-black uppercase text-center text-sm text-blue-700"
+            className="w-full pt-3  h-full font-black uppercase text-center text-sm text-blue-700"
             to={"/loginView"}
           >
             login
@@ -146,7 +146,7 @@ const Navbar = () => {
       ) : (
         <li>
           <Link
-            className="w-full h-full font-black uppercase text-center text-sm text-blue-700"
+            className="w-full  pt-3 h-full font-black uppercase text-center text-sm text-blue-700"
             to={"/logout"}
           >
             logout

@@ -25,13 +25,10 @@ const LoginAsStaff = () => {
       : "/";
 
   console.log(from);
-  if (error || gerror) {
-    return (
-      <div>
-        <p>Error: {error.message}</p>
-      </div>
-    );
-  }
+  // if (error || gerror) {
+  //   toast.error("Error during login", error, gerror);
+  // }
+
   if (gloading || loading) {
     return <Loading></Loading>;
   }
@@ -62,6 +59,7 @@ const LoginAsStaff = () => {
               setError(null);
               toast.success("Successfully logged in");
               setStatus(1);
+              navigate(from, { replace: true });
             }
           });
       } else {
@@ -96,7 +94,7 @@ const LoginAsStaff = () => {
       <div className="card w-96 bg-base-100 shadow-xl">
         <div className="card-body">
           <h1 className="text-center text-xl text-blue-700 font-extrabold">
-            {user ? `Welcome, ${user}!` : "Please login as ADMIN"}
+            {user ? `Welcome, ${user}!` : "Please login as STAFF"}
           </h1>
 
           <form onSubmit={handleFormSubmit}>
@@ -131,25 +129,14 @@ const LoginAsStaff = () => {
                 required
               />
             </div>
-            <Link>
-              <button to='/dashboardStaff'
-                className="btn btn-outline w-full font-bold bg-blue-100 text-xs text-blue-800"
-                type="submit"
-              >
-                Login
-              </button>
-            </Link>
+            <button
+              className="btn btn-outline w-full font-bold bg-blue-100 text-xs text-blue-800"
+              type="submit"
+            >
+              Login
+            </button>
             {loading && <div>Loading...</div>}
-            {error && <div>Error: {error}</div>}
           </form>
-          <p className="text-center">
-            <small className="font-semibold">
-              New to sniff-n-paws?
-              <Link className="text-blue-700" to="/signup">
-                Create new account
-              </Link>
-            </small>
-          </p>
         </div>
       </div>
     </div>
@@ -157,3 +144,6 @@ const LoginAsStaff = () => {
 };
 
 export default LoginAsStaff;
+// {user ? (
+//             <Logout />
+//           ) :()}

@@ -25,13 +25,10 @@ const LoginAsVet = () => {
       : "/";
 
   console.log(from);
-  if (error || gerror) {
-    return (
-      <div>
-        <p>Error: {error.message}</p>
-      </div>
-    );
-  }
+  // if (error || gerror) {
+  //   toast.error("Error during login", error, gerror);
+  // }
+
   if (gloading || loading) {
     return <Loading></Loading>;
   }
@@ -62,6 +59,7 @@ const LoginAsVet = () => {
               setError(null);
               toast.success("Successfully logged in");
               setStatus(1);
+              navigate(from, { replace: true });
             }
           });
       } else {
@@ -96,9 +94,9 @@ const LoginAsVet = () => {
       <div className="card w-96 bg-base-100 shadow-xl">
         <div className="card-body">
           <h1 className="text-center text-xl text-blue-700 font-extrabold">
-            {user ? `Welcome, ${user}!` : "Please login as ADMIN"}
+            {user ? `Welcome, ${user}!` : "Please login as STAFF"}
           </h1>
-          (
+
           <form onSubmit={handleFormSubmit}>
             <div className="form-control pt-5 w-full max-w-xs">
               <label className="label">
@@ -137,17 +135,8 @@ const LoginAsVet = () => {
             >
               Login
             </button>
+            {loading && <div>Loading...</div>}
           </form>
-          ){loading && <div>Loading...</div>}
-          {error && <div>Error: {error}</div>}
-          <p className="text-center">
-            <small className="font-semibold">
-              New to sniff-n-paws?
-              <Link className="text-blue-700" to="/signup">
-                Create new account
-              </Link>
-            </small>
-          </p>
         </div>
       </div>
     </div>
@@ -155,3 +144,6 @@ const LoginAsVet = () => {
 };
 
 export default LoginAsVet;
+// {user ? (
+//             <Logout />
+//           ) :()}

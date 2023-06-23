@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import CustomerSelfInfoRow from "./CustomerSelfInfoRow";
+import StaffProfileRow from "./StaffProfileRow";
 
-const CustomerSelfInfo = () => {
+const StaffProfile = () => {
   const [customers, setCustomers] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:3002/customer_selfInfo`)
+    fetch(`http://localhost:3002/staff_selfInfo`)
       .then((res) => res.json())
       .then((datam) => {
         setCustomers(datam);
@@ -44,10 +44,10 @@ const CustomerSelfInfo = () => {
           </thead>
           <tbody>
             {customers.map((customer) => (
-              <CustomerSelfInfoRow
+              <StaffProfileRow
                 key={customer.customer_id}
                 customer={customer}
-              ></CustomerSelfInfoRow>
+              ></StaffProfileRow>
             ))}
           </tbody>
         </table>
@@ -56,4 +56,4 @@ const CustomerSelfInfo = () => {
   );
 };
 
-export default CustomerSelfInfo;
+export default StaffProfile;

@@ -25,13 +25,10 @@ const LoginAsCustomer = () => {
       : "/";
 
   console.log(from);
-  if (error || gerror) {
-    return (
-      <div>
-        <p>Error: {error.message}</p>
-      </div>
-    );
-  }
+  // if (error || gerror) {
+  //   toast.error("Error during login", error, gerror);
+  // }
+
   if (gloading || loading) {
     return <Loading></Loading>;
   }
@@ -62,6 +59,7 @@ const LoginAsCustomer = () => {
               setError(null);
               toast.success("Successfully logged in");
               setStatus(1);
+              navigate(from, { replace: true });
             }
           });
       } else {
@@ -96,7 +94,7 @@ const LoginAsCustomer = () => {
       <div className="card w-96 bg-base-100 shadow-xl">
         <div className="card-body">
           <h1 className="text-center text-xl text-blue-700 font-extrabold">
-            {user ? `Welcome, ${user}!` : "Please login as ADMIN"}
+            {user ? `Welcome, ${user}!` : "Please login as CUSTOMER"}
           </h1>
 
           <form onSubmit={handleFormSubmit}>
@@ -131,17 +129,14 @@ const LoginAsCustomer = () => {
                 required
               />
             </div>
-            <Link to="/dashboardCustomer">
-              <button
-                className="btn btn-outline w-full font-bold bg-blue-100 text-xs text-blue-800"
-                type="submit"
-              >
-                Login
-              </button>
-            </Link>
-            {error && <div>Error: {error}</div>}
+            <button
+              className="btn btn-outline w-full font-bold bg-blue-100 text-xs text-blue-800"
+              type="submit"
+            >
+              Login
+            </button>
+            {loading && <div>Loading...</div>}
           </form>
-          {loading && <div>Loading...</div>}
           <p className="text-center">
             <small className="font-semibold">
               New to sniff-n-paws?
@@ -157,3 +152,6 @@ const LoginAsCustomer = () => {
 };
 
 export default LoginAsCustomer;
+// {user ? (
+//             <Logout />
+//           ) :()}

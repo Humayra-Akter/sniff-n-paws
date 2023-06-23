@@ -25,13 +25,10 @@ const LoginAsAdmin = () => {
       : "/";
 
   console.log(from);
-  if (error || gerror) {
-    return (
-      <div>
-        <p>Error: {error.message}</p>
-      </div>
-    );
-  }
+  // if (error || gerror) {
+  //   toast.error("Error during login", error, gerror);
+  // }
+
   if (gloading || loading) {
     return <Loading></Loading>;
   }
@@ -62,6 +59,7 @@ const LoginAsAdmin = () => {
               setError(null);
               toast.success("Successfully logged in");
               setStatus(1);
+              navigate(from, { replace: true });
             }
           });
       } else {
@@ -131,16 +129,13 @@ const LoginAsAdmin = () => {
                 required
               />
             </div>
-            <Link to="/dashboard">
-              <button
-                className="btn btn-outline w-full font-bold bg-blue-100 text-xs text-blue-800"
-                type="submit"
-              >
-                Login
-              </button>
-            </Link>
+            <button
+              className="btn btn-outline w-full font-bold bg-blue-100 text-xs text-blue-800"
+              type="submit"
+            >
+              Login
+            </button>
             {loading && <div>Loading...</div>}
-            {error && <div>Error: {error}</div>}
           </form>
           <p className="text-center">
             <small className="font-semibold">

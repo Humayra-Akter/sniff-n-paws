@@ -41,7 +41,16 @@ import DashboardCustomer from "./Component/DashboardCustomer/DashboardCustomer";
 import DashboardStuff from "./Component/DashboardStuff/DashboardStuff";
 import DashboardVet from "./Component/DashboardVet/DashboardVet";
 import VetHistory from "./Component/DashboardVet/VetHistory";
-import CustomerSelfInfo from "./Component/DashboardCustomer/CustomerSelfInfo";
+import CustomerInfo from "./Component/DashboardCustomer/CustomerInfo";
+import CustomerCabin from "./Component/DashboardCustomer/CustomerCabin";
+import CustomerDonation from "./Component/DashboardCustomer/CustomerDonation";
+import CustomerFeedback from "./Component/DashboardCustomer/CustomerFeedback";
+import CustomerPrice from "./Component/DashboardCustomer/CustomerPrice";
+import StaffProfile from "./Component/DashboardStuff/StaffProfile";
+import StaffInfo from "./Component/DashboardStuff/StaffInfo";
+import StaffFindCabin from "./Component/DashboardStuff/StaffFindCabin";
+import StaffDaycareAnimal from "./Component/DashboardStuff/StaffDaycareAnimal";
+import StaffRescuedAnimal from "./Component/DashboardStuff/StaffRescuedAnimal";
 
 function App() {
   return (
@@ -77,14 +86,27 @@ function App() {
           <Route path="daycareAnimal" element={<DaycareAnimal />}></Route>
           <Route path="rescuedAnimal" element={<RescuedAnimal />}></Route>
         </Route>
-        <Route path="/dashboardCustomer" element={<DashboardCustomer />}>
-          <Route index element={<CustomerSelfInfo />}></Route>
-        </Route>
-        <Route path="/dashboardStaff" element={<DashboardStuff />}>
-          <Route index element={<DashboardStuff />}></Route>
-        </Route>
         <Route path="/dashboardVet" element={<DashboardVet />}>
           <Route index element={<VetHistory />}></Route>
+        </Route>
+        <Route path="/dashboardCustomer" element={<DashboardCustomer />}>
+          <Route index element={<CustomerInfo />}></Route>
+          <Route path="customerCabin" element={<CustomerCabin />}></Route>
+          <Route path="customerDonation" element={<CustomerDonation />}></Route>
+          <Route path="customerFeedback" element={<CustomerFeedback />}></Route>
+          <Route path="customerPrice" element={<CustomerPrice />}></Route>
+        </Route>
+        <Route path="/dashboardStaff" element={<DashboardStuff />}>
+          <Route index element={<StaffInfo />}></Route>
+          <Route path="staffFindCabin" element={<StaffFindCabin />}></Route>
+          <Route
+            path="staffDaycareAnimal"
+            element={<StaffDaycareAnimal />}
+          ></Route>
+          <Route
+            path="staffRescuedAnimal"
+            element={<StaffRescuedAnimal />}
+          ></Route>
         </Route>
         <Route path="/donate" element={<Donate />}></Route>
         <Route path="/about" element={<About />}></Route>
