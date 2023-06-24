@@ -2,7 +2,7 @@ import React from "react";
 
 const Button = ({ children }) => {
   return (
-    <button className="btn btn-primary text-white font-bold bg-gradient-to-r from-secondary to-primary">
+    <button className="max-w-xs transition duration-300 ease-in-out hover:scale-110">
       {children}
     </button>
   );

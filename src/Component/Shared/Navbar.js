@@ -16,7 +16,7 @@ const Navbar = () => {
       .then((response) => response.json())
       .then((data) => {
         const statusFromBackend = data.isStatusTrue;
-        console.log(data.isStatusTrue);
+        // console.log(data.isStatusTrue);
         setStatus(statusFromBackend);
       })
       .catch((error) => {
@@ -54,14 +54,14 @@ const Navbar = () => {
           feedback
         </Link>
       </li>
-      <li>
+      {/* <li>
         <Link
           className="w-full  pt-3 h-full font-black uppercase text-center text-sm text-blue-700"
           to={"/donate"}
         >
           Donate
         </Link>
-      </li>
+      </li> */}
       <li>
         <Link
           className="w-full pt-3  h-full font-black uppercase text-center text-sm text-blue-700"

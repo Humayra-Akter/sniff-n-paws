@@ -81,7 +81,7 @@ const VetUpdateHealthRecord = () => {
                 />
               </div>
             </div>
-            <div>
+            <div className="pb-5">
               <label htmlFor="animal_identifier">animal_identifier:</label>
               <input
                 type="text"

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import RescuerRow from "./RescuerRow";
 import RescuerCustomer from "./RescuerCustomer";
 import RescuerInfo from "./RescuerInfo";
+import RescuerInsert from "./RescuerInsert";
 
 const Rescuer = () => {
   const [vets, setVets] = useState([]);
@@ -14,10 +15,10 @@ const Rescuer = () => {
   }, []);
   return (
     <div>
-      <div className="flex gap-16">
-        <RescuerCustomer></RescuerCustomer>
+      <div className="flex gap-36">
+        <RescuerInsert></RescuerInsert>
         <div>
-          <div className="pt-20 pb-28 pl-0">
+          <div className="pt-40 pb-28 pl-0">
             <div className="overflow-x-auto">
               <h1 className="font-semibold text-2xl pb-7 text-blue-700">
                 Total Rescuer: {vets.length}
@@ -47,6 +48,7 @@ const Rescuer = () => {
         </div>
       </div>
       <RescuerInfo></RescuerInfo>
+      <RescuerCustomer></RescuerCustomer>
     </div>
   );
 };

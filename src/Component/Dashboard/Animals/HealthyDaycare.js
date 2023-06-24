@@ -20,15 +20,13 @@ const HealthyDaycare = () => {
           <table className="table">
             <thead>
               <tr>
-                <th>index</th>
-                <td>AGE</td>
+                <th>DAYCARE_ANIMAL_ID </th>
                 <td>BREED</td>
-                <td>WEIGHT</td>
-                <td>RATE</td>
                 <td>TYPE</td>
-                <td>COMING_DATE</td>
-                <td>RELEASE_DATE</td>
-                <td>customer_id</td>
+                <td>coming date</td>
+                <td>release date</td>
+                <td>CABIN_NO</td>
+                <td>CUSTOMER_ID</td>
               </tr>
             </thead>
             <tbody>

@@ -46,11 +46,11 @@ import CustomerCabin from "./Component/DashboardCustomer/CustomerCabin";
 import CustomerDonation from "./Component/DashboardCustomer/CustomerDonation";
 import CustomerFeedback from "./Component/DashboardCustomer/CustomerFeedback";
 import CustomerPrice from "./Component/DashboardCustomer/CustomerPrice";
-import StaffProfile from "./Component/DashboardStuff/StaffProfile";
 import StaffInfo from "./Component/DashboardStuff/StaffInfo";
 import StaffFindCabin from "./Component/DashboardStuff/StaffFindCabin";
 import StaffDaycareAnimal from "./Component/DashboardStuff/StaffDaycareAnimal";
 import StaffRescuedAnimal from "./Component/DashboardStuff/StaffRescuedAnimal";
+import VetProfile from "./Component/DashboardVet/VetProfile";
 
 function App() {
   return (
@@ -83,11 +83,11 @@ function App() {
           <Route path="cabin" element={<Cabin />}></Route>
           <Route path="donation" element={<Donation />}></Route>
           <Route path="feedback" element={<Feedback />}></Route>
-          <Route path="daycareAnimal" element={<DaycareAnimal />}></Route>
           <Route path="rescuedAnimal" element={<RescuedAnimal />}></Route>
         </Route>
         <Route path="/dashboardVet" element={<DashboardVet />}>
-          <Route index element={<VetHistory />}></Route>
+          <Route index element={<VetProfile />}></Route>
+          <Route path="vetProfile" element={<VetHistory />}></Route>
         </Route>
         <Route path="/dashboardCustomer" element={<DashboardCustomer />}>
           <Route index element={<CustomerInfo />}></Route>

@@ -26,6 +26,14 @@ const DashboardVet = () => {
                 to="/dashboardVet"
                 className="w-full pt-20 uppercase h-full font-bold text-center text-sm text-blue-700"
               >
+                👉 profile
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/dashboardVet/vetProfile"
+                className="w-full uppercase h-full font-bold text-center text-sm text-blue-700"
+              >
                 👉 vet history
               </Link>
             </li>
