@@ -51,10 +51,11 @@ import StaffFindCabin from "./Component/DashboardStuff/StaffFindCabin";
 import StaffDaycareAnimal from "./Component/DashboardStuff/StaffDaycareAnimal";
 import StaffRescuedAnimal from "./Component/DashboardStuff/StaffRescuedAnimal";
 import VetProfile from "./Component/DashboardVet/VetProfile";
+import StaffAdminView from "./Component/DashboardStuff/StaffAdminView";
 
 function App() {
   return (
-    <div>
+    <div className="bg-site bg-no-repeat bg-cover overflow-hidden">
       <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -121,6 +122,7 @@ function App() {
         <Route path="*" element={<Error />}></Route>
       </Routes>
       <Footer></Footer>
+      <div className="h-[4000px]"></div>
       <ToastContainer />
     </div>
   );

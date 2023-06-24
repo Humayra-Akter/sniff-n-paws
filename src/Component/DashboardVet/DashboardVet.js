@@ -34,7 +34,7 @@ const DashboardVet = () => {
                 to="/dashboardVet/vetProfile"
                 className="w-full uppercase h-full font-bold text-center text-sm text-blue-700"
               >
-                👉 vet history
+                👉 pending animals
               </Link>
             </li>
           </ul>

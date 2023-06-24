@@ -3,6 +3,7 @@ import StaffSpecializationCard from "./StaffSpecializationCard";
 
 const StaffSpecialization = () => {
   const [specializations, setSpecializations] = useState([]);
+
   useEffect(() => {
     fetch("http://localhost:3002/staff_specialization")
       .then((res) => res.json())

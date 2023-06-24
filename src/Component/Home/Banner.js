@@ -1,13 +1,27 @@
 import React from "react";
 import img from "../../assets/images/pets-g1111451cc_1280-removebg-preview.png";
 import img1 from "../../assets/images/rabbit-removebg-preview.png";
+import { TypeAnimation } from "react-type-animation";
 // import bg from "../../assets/images/paws-gb0cab7af7_1280.png";
 
 const Banner = () => {
   return (
     <div>
       <h1 className="w-full h-full border-8 border-blue-100 text-blue-800 pt-10 p-10 font-serif font-extrabold text-center text-5xl bg-blue-50">
-        SNIFF-N-PAWS
+        <TypeAnimation
+          sequence={[
+            "SNIFF-N-PAWS",
+            2000,
+            "We care for your pets",
+            2000,
+            "We serve your rabbits, dogs & cats",
+            2000,
+          ]}
+          speed={50}
+          className="text-blue-900"
+          wrapper="span"
+          repeat={Infinity}
+        />
       </h1>
       <div className="flex">
         <img

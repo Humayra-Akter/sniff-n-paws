@@ -19,7 +19,7 @@ const CardComponent = () => {
       onMouseEnter={handleHover}
       onMouseLeave={handleHover}
     >
-      <div className="absolute inset-0 w-full h-full flex justify-center items-center  transition-all duration-100 delay-200 z-20 hover:opacity-0">
+      <div className=" w-full h-full flex justify-center items-center  transition-all duration-100 delay-200 z-20 hover:opacity-0">
         <img src={img1} alt="Front of Card" />
       </div>
       <div className="absolute inset-0 w-full h-full flex justify-center items-center bg-blue-50 transition-all z-10 card-back text-blue-800 text-justify p-7">

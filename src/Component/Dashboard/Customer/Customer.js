@@ -1,56 +1,58 @@
 import React, { useEffect, useState } from "react";
 import CustomerRow from "./CustomerRow";
-import CustomerInsert from "./CustomerInsert";
 import CustomerDelete from "./CustomerDelete";
 import CustomerUpdate from "./CustomerUpdate";
-import CustomerBanner from "./CustomerBanner";
 
 const Customer = () => {
   const [customers, setCustomers] = useState([]);
-  let [searchText, setSearchText] = useState("");
-  const [searchResult, setSearchResult] = useState([]);
-
   useEffect(() => {
     fetch("http://localhost:3002/customer")
       .then((res) => res.json())
       .then((datam) => {
-        console.log(searchText);
         setCustomers(datam);
-        const match = datam.filter(
-          (d) => d.email && d.email.includes(searchText)
-        );
-        setSearchResult(match);
       });
-  }, [searchText]);
+  }, []);
+  const handleSearch = () => {
+    // Declare variables
+    let input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
 
-  const handleSearchChange = (event) => {
-    const searchText = event.target.value;
-    setSearchText(searchText);
+    // Loop through all table rows, and hide those who don't match the search query
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
   };
 
   return (
-    <div>
-      <CustomerBanner></CustomerBanner>
-      <div>
-        <input
-          onChange={handleSearchChange}
-          type="text"
-          className="border-2"
-          placeholder="Search customer"
-        ></input>
-      </div>
+    <div className="text-center pt-20">
+      <input
+        type="text"
+        id="myInput"
+        onChange={handleSearch}
+        placeholder="Search for names by emails"
+        className="border-2 input-md"
+      />
       <div className="pt-20 pb-56 pl-0">
         <div className="overflow-x-auto">
           <h1 className="font-semibold text-2xl pb-7 text-blue-700">
-            Total customers: {customers.length}
-            <br />
-            Total searched customers: {searchResult.length}
+            Total Customers: {customers.length}
           </h1>
-          <table className="table">
+          <table id="myTable" className="table">
             <thead>
               <tr>
                 <th className="uppercase text-xs font-extrabold text-left">
-                  customer_id
+                  id
                 </th>
                 <td className="uppercase text-xs font-extrabold text-left">
                   name
@@ -71,32 +73,24 @@ const Customer = () => {
                   Age
                 </td>
                 <td className="uppercase text-xs font-extrabold text-left">
-                  Home
+                  Designation
+                </td>
+                <td className="uppercase text-xs font-extrabold text-left">
+                  phone
                 </td>
               </tr>
             </thead>
             <tbody>
               {customers.map((customer) => (
-                <CustomerRow
-                  key={customer.customer_id}
-                  customer={customer}
-                ></CustomerRow>
+                <CustomerRow customer={customer}></CustomerRow>
               ))}
             </tbody>
-            {/* <tbody>
-              {searchResult.map((customer) => (
-                <CustomerRow
-                  key={customer.customer_id}
-                  customer={customer}
-                ></CustomerRow>
-              ))}
-            </tbody> */}
           </table>
         </div>
-      </div>
-      <div className="flex pt-20 px-20 gap-32">
-        <CustomerDelete></CustomerDelete>
-        <CustomerUpdate></CustomerUpdate>
+        <div className="flex gap-40 pt-40 ">
+          <CustomerDelete></CustomerDelete>
+          <CustomerUpdate></CustomerUpdate>
+        </div>
       </div>
     </div>
   );

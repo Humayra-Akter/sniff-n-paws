@@ -24,19 +24,19 @@ const DashboardStuff = () => {
             <li>
               <Link
                 to="/dashboardStaff"
-                className="w-full pt-20 uppercase h-full font-bold text-center text-sm text-blue-700"
+                className="w-full  pt-20  uppercase h-full font-bold text-center text-sm text-blue-700"
               >
                 👉 profile
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link
                 to="/dashboardStaff/staffFindCabin"
                 className="w-full uppercase h-full font-bold text-center text-sm text-blue-700"
               >
                 👉 staff find cabin
               </Link>
-            </li>
+            </li>{" "} */}
             <li>
               <Link
                 to="/dashboardStaff/staffDaycareAnimal"

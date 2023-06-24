@@ -14,17 +14,45 @@ const Staff = () => {
         setStaffs(datam);
       });
   }, []);
+  const handleSearch = () => {
+    // Declare variables
+    let input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+
+    // Loop through all table rows, and hide those who don't match the search query
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+  };
 
   return (
     <div>
       <StaffSpecialization></StaffSpecialization>
-      <div>
+      <div className="text-center pt-20">
+        <input
+          type="text"
+          id="myInput"
+          onChange={handleSearch}
+          placeholder="Search for names by emails"
+          className="border-2 input-lg"
+        />
         <div className="pt-20 pb-56 pl-0">
           <div className="overflow-x-auto">
             <h1 className="font-semibold text-2xl pb-7 text-blue-700">
               Total Staffs: {staffs.length}
             </h1>
-            <table className="table">
+            <table id="myTable" className="table">
               <thead>
                 <tr>
                   <th className="uppercase text-xs font-extrabold text-left">
