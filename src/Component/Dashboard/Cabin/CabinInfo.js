@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import CabinRow from "./CabinRow";
-import CabinInfo from "./CabinInfo";
 
-const Cabin = () => {
+const CabinInfo = () => {
   const [cabins, setCabins] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:3002/customer_animal_cabin")
+    fetch("http://localhost:3002/cabin_info")
       .then((res) => res.json())
       .then((datam) => {
         setCabins(datam);
@@ -13,29 +12,34 @@ const Cabin = () => {
   }, []);
   return (
     <div>
-      <CabinInfo></CabinInfo>
       <div className="pt-20 pb-56 pl-0">
         <div className="overflow-x-auto">
           <h1 className="font-semibold text-2xl pb-7 text-blue-700">
-            Total animal cabin: {cabins.length}
+            Cabin Info: {cabins.length}
           </h1>
           <table className="table">
             <thead>
               <tr>
                 <th className="uppercase text-xs font-extrabold text-left">
-                  customer_id
+                  cabin_no
                 </th>
                 <td className="uppercase text-xs font-extrabold text-left">
-                  name
+                  capacity
                 </td>
                 <td className="uppercase text-xs font-extrabold text-left">
-                  Coming-release date
+                  current animal count{" "}
                 </td>
                 <td className="uppercase text-xs font-extrabold text-left">
-                  Cabin_no
+                  free space
                 </td>
                 <td className="uppercase text-xs font-extrabold text-left">
-                  Total daycare services
+                  cabin type
+                </td>
+                <td className="uppercase text-xs font-extrabold text-left">
+                  animal type
+                </td>
+                <td className="uppercase text-xs font-extrabold text-left">
+                  animal ids
                 </td>
               </tr>
             </thead>
@@ -54,4 +58,4 @@ const Cabin = () => {
   );
 };
 
-export default Cabin;
+export default CabinInfo;

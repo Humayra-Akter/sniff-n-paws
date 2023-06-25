@@ -32,7 +32,7 @@ const Navbar = () => {
     <>
       <li>
         <Link
-          className="w-full pt-3 h-full font-black uppercase text-center text-sm text-blue-700"
+          className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full pt-4 h-full font-black uppercase text-center text-sm text-blue-700"
           to={"/"}
         >
           Home
@@ -40,7 +40,7 @@ const Navbar = () => {
       </li>
       <li>
         <Link
-          className="w-full pt-3 h-full font-black uppercase text-center text-sm text-blue-700"
+          className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full pt-4 h-full font-black uppercase text-center text-sm text-blue-700"
           to={"/services"}
         >
           services
@@ -48,7 +48,7 @@ const Navbar = () => {
       </li>
       <li>
         <Link
-          className="w-full pt-3  h-full font-black uppercase text-center text-sm text-blue-700"
+          className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full pt-4  h-full font-black uppercase text-center text-sm text-blue-700"
           to={"/feedbackGeneral"}
         >
           feedback
@@ -56,7 +56,7 @@ const Navbar = () => {
       </li>
       {/* <li>
         <Link
-          className="w-full  pt-3 h-full font-black uppercase text-center text-sm text-blue-700"
+          className="w-full  pt-4 h-full font-black uppercase text-center text-sm text-blue-700"
           to={"/donate"}
         >
           Donate
@@ -64,7 +64,7 @@ const Navbar = () => {
       </li> */}
       <li>
         <Link
-          className="w-full pt-3  h-full font-black uppercase text-center text-sm text-blue-700"
+          className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full pt-4  h-full font-black uppercase text-center text-sm text-blue-700"
           to={"/contact"}
         >
           contact
@@ -72,7 +72,7 @@ const Navbar = () => {
       </li>
       <li>
         <Link
-          className="w-full pt-3  h-full font-black uppercase text-center text-sm text-blue-700"
+          className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full pt-4  h-full font-black uppercase text-center text-sm text-blue-700"
           to={"/about"}
         >
           About
@@ -92,7 +92,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/Dashboard"
-                className="w-full uppercase h-full font-bold text-center text-sm text-blue-700"
+                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm text-blue-700"
               >
                 👉 Admin
               </Link>
@@ -100,7 +100,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/dashboardStaff"
-                className="w-full uppercase h-full font-bold text-center text-sm text-blue-700"
+                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm text-blue-700"
               >
                 👉 staff
               </Link>
@@ -108,7 +108,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/dashboardCustomer"
-                className="w-full uppercase h-full font-bold text-center text-sm text-blue-700"
+                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm text-blue-700"
               >
                 👉 Customer
               </Link>
@@ -117,7 +117,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/dashboardVet"
-                className="w-full uppercase h-full font-bold text-center text-sm text-blue-700"
+                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm text-blue-700"
               >
                 👉 Vet
               </Link>
@@ -128,7 +128,7 @@ const Navbar = () => {
 
       <li>
         <Link
-          className="w-full  pt-3 h-full font-black uppercase text-center text-sm text-blue-700"
+          className="w-full transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none  pt-4 h-full font-black uppercase text-center text-sm text-blue-700"
           to={"/loginView"}
         >
           login
@@ -137,7 +137,7 @@ const Navbar = () => {
       {status ? (
         <li>
           <Link
-            className="w-full pt-3  h-full font-black uppercase text-center text-sm text-blue-700"
+            className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full pt-4  h-full font-black uppercase text-center text-sm text-blue-700"
             to={"/loginView"}
           >
             login
@@ -146,7 +146,7 @@ const Navbar = () => {
       ) : (
         <li>
           <Link
-            className="w-full  pt-3 h-full font-black uppercase text-center text-sm text-blue-700"
+            className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full  pt-4 h-full font-black uppercase text-center text-sm text-blue-700"
             to={"/logout"}
           >
             logout

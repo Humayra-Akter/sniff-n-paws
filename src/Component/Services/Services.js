@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import img1 from "../../assets/images/fostercat1.jpg";
 import img2 from "../../assets/images/fosterdog1.jpg";
 import img3 from "../../assets/images/fosterRabbit1.jpg";
@@ -8,6 +8,7 @@ import img6 from "../../assets/images/fosterRabbit2.jpg";
 import ServiceCards from "./ServiceCards";
 
 const Services = () => {
+
   const services = [
     {
       _id: 1,

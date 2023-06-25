@@ -16,7 +16,7 @@ const VetShift = () => {
       <div className="pt-20 pb-56 pl-0">
         <div className="overflow-x-auto">
           <h1 className="font-semibold text-2xl pb-7 text-blue-700">
-            Total Veterinarian shift: {vets.length}
+            Total Veterinarian schedule: {vets.length}
           </h1>
           <table className="table">
             <thead>

@@ -84,6 +84,7 @@ function App() {
           <Route path="cabin" element={<Cabin />}></Route>
           <Route path="donation" element={<Donation />}></Route>
           <Route path="feedback" element={<Feedback />}></Route>
+          <Route path="daycareAnimal" element={<DaycareAnimal />}></Route>
           <Route path="rescuedAnimal" element={<RescuedAnimal />}></Route>
         </Route>
         <Route path="/dashboardVet" element={<DashboardVet />}>
@@ -122,7 +123,6 @@ function App() {
         <Route path="*" element={<Error />}></Route>
       </Routes>
       <Footer></Footer>
-      <div className="h-[4000px]"></div>
       <ToastContainer />
     </div>
   );

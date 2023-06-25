@@ -29,14 +29,14 @@ const DashboardStuff = () => {
                 👉 profile
               </Link>
             </li>
-            {/* <li>
+            <li>
               <Link
                 to="/dashboardStaff/staffFindCabin"
                 className="w-full uppercase h-full font-bold text-center text-sm text-blue-700"
               >
                 👉 staff find cabin
               </Link>
-            </li>{" "} */}
+            </li>{" "}
             <li>
               <Link
                 to="/dashboardStaff/staffDaycareAnimal"

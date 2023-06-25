@@ -2,7 +2,8 @@ import React from "react";
 import img from "../../assets/images/pets-g1111451cc_1280-removebg-preview.png";
 import img1 from "../../assets/images/rabbit-removebg-preview.png";
 import { TypeAnimation } from "react-type-animation";
-// import bg from "../../assets/images/paws-gb0cab7af7_1280.png";
+import bg from "../../assets/images/output-onlinepngtools_1.png";
+import bg1 from "../../assets/images/output-onlinepngtools222.png";
 
 const Banner = () => {
   return (
@@ -30,10 +31,10 @@ const Banner = () => {
           alt=""
         ></img>
         <h1
-          // style={{
-          //   background: `url(${bg})`,
-          //   backgroundSize: "cover",
-          // }}
+          style={{
+            background: `url(${bg})`,
+            backgroundSize: "cover",
+          }}
           className="uppercase font-mono justify-end text-center px-56 py-44 text-2xl font-black text-blue-800"
         >
           We care for your pets
@@ -41,10 +42,10 @@ const Banner = () => {
       </div>
       <div className=" flex justify-end">
         <h1
-          // style={{
-          //   background: `url(${bg})`,
-          //   backgroundSize: "cover",
-          // }}
+          style={{
+            background: `url(${bg1})`,
+            backgroundSize: "cover",
+          }}
           className="uppercase font-mono text-center  px-36 py-44  text-2xl font-black text-blue-800"
         >
           We serve your rabbits, dogs & cats

@@ -18,9 +18,6 @@ const Vet = () => {
   }, []);
   return (
     <div>
-      <VetShiftView></VetShiftView>
-      <VetShift></VetShift>
-      <VetAnimal></VetAnimal>
       <div className="pt-20 pb-56 pl-0">
         <div className="overflow-x-auto">
           <h1 className="font-semibold text-2xl pb-7 text-blue-700">
@@ -75,6 +72,9 @@ const Vet = () => {
             <VetUpdate></VetUpdate>
           </div>
         </div>
+        <VetShiftView></VetShiftView>
+        <VetShift></VetShift>
+        <VetAnimal></VetAnimal>
       </div>
     </div>
   );

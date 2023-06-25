@@ -53,14 +53,7 @@ const Dashboard = () => {
               👉 veterinarian
             </Link>
           </li>
-          <li>
-            <Link
-              to="/dashboard/rescuer"
-              className="w-full uppercase h-full font-bold text-center text-sm text-blue-700"
-            >
-              👉 rescuer
-            </Link>
-          </li>
+
           {/* <li>
             <Link
               to="/dashboard/healthRecord"
@@ -69,14 +62,7 @@ const Dashboard = () => {
               👉 health record
             </Link>
           </li> */}
-          <li>
-            <Link
-              to="/dashboard/cabin"
-              className="w-full uppercase h-full font-bold text-center text-sm text-blue-700"
-            >
-              👉 cabin
-            </Link>
-          </li>
+
           <li>
             <Link
               to="/dashboard/donation"
@@ -91,6 +77,22 @@ const Dashboard = () => {
               className="w-full uppercase h-full font-bold text-center text-sm text-blue-700"
             >
               👉 feedback
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/dashboard/rescuer"
+              className="w-full uppercase h-full font-bold text-center text-sm text-blue-700"
+            >
+              👉 rescuer
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/dashboard/cabin"
+              className="w-full uppercase h-full font-bold text-center text-sm text-blue-700"
+            >
+              👉 cabin
             </Link>
           </li>
           <li>

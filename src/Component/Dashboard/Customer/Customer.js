@@ -73,9 +73,6 @@ const Customer = () => {
                   Age
                 </td>
                 <td className="uppercase text-xs font-extrabold text-left">
-                  Designation
-                </td>
-                <td className="uppercase text-xs font-extrabold text-left">
                   phone
                 </td>
               </tr>
