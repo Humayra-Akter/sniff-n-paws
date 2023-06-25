@@ -12,7 +12,7 @@ const DonateHistory = () => {
   }, []);
   return (
     <div>
-      <div className="pt-20 pb-40 pl-0">
+      <div className="pt-20 pb-28 pl-0">
         <div className="overflow-x-auto px-32">
           <h1 className="font-semibold text-2xl pb-7 text-blue-700">
             Your Previous Donations: {donations.length}

@@ -31,10 +31,10 @@ const Banner = () => {
           alt=""
         ></img>
         <h1
-          style={{
-            background: `url(${bg})`,
-            backgroundSize: "cover",
-          }}
+          // style={{
+          //   background: `url(${bg})`,
+          //   backgroundSize: "cover",
+          // }}
           className="uppercase font-mono justify-end text-center px-56 py-44 text-2xl font-black text-blue-800"
         >
           We care for your pets
@@ -42,10 +42,10 @@ const Banner = () => {
       </div>
       <div className=" flex justify-end">
         <h1
-          style={{
-            background: `url(${bg1})`,
-            backgroundSize: "cover",
-          }}
+          // style={{
+          //   background: `url(${bg1})`,
+          //   backgroundSize: "cover",
+          // }}
           className="uppercase font-mono text-center  px-36 py-44  text-2xl font-black text-blue-800"
         >
           We serve your rabbits, dogs & cats

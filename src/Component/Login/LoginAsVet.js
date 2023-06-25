@@ -5,8 +5,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 import Loading from "../Shared/Loading";
 import { toast } from "react-toastify";
-import Login from "./Logout";
-import Logout from "./Logout";
+import bg from "../../assets/images/output7.png";
 
 const LoginAsVet = () => {
   const [user, setUser] = useState(null);
@@ -90,7 +89,13 @@ const LoginAsVet = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div
+      style={{
+        background: `url(${bg})`,
+        backgroundSize: "cover",
+      }}
+      className="flex justify-center items-center h-screen"
+    >
       <div className="card w-96 bg-base-100 shadow-xl">
         <div className="card-body">
           <h1 className="text-center text-xl text-blue-700 font-extrabold">

@@ -1,9 +1,16 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
+import bg from "../../assets/images/output7.png";
 
 const Dashboard = () => {
   return (
-    <div className="drawer lg:drawer-open">
+    <div
+      style={{
+        background: `url(${bg})`,
+        backgroundSize: "cover",
+      }}
+      className="drawer lg:drawer-open"
+    >
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col items-center justify-center">
         <h1 className="w-full h-full font-extrabold text-left text-5xl text-blue-700 pl-4 pt-7">
@@ -23,7 +30,7 @@ const Dashboard = () => {
           <li>
             <Link
               to="/dashboard"
-              className="w-full pt-20 uppercase h-full font-bold text-center text-sm text-blue-700"
+              className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full pt-20 uppercase h-full font-bold text-center text-sm text-blue-700"
             >
               👉 Admin
             </Link>
@@ -31,7 +38,7 @@ const Dashboard = () => {
           <li>
             <Link
               to="/dashboard/customers"
-              className="w-full uppercase h-full font-bold text-center text-sm text-blue-700"
+              className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm text-blue-700"
             >
               👉 customers
             </Link>
@@ -40,7 +47,7 @@ const Dashboard = () => {
           <li>
             <Link
               to="/dashboard/staff"
-              className="w-full uppercase h-full font-bold text-center text-sm text-blue-700"
+              className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm text-blue-700"
             >
               👉 staff
             </Link>
@@ -48,7 +55,7 @@ const Dashboard = () => {
           <li>
             <Link
               to="/dashboard/vet"
-              className="w-full uppercase h-full font-bold text-center text-sm text-blue-700"
+              className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm text-blue-700"
             >
               👉 veterinarian
             </Link>
@@ -66,7 +73,7 @@ const Dashboard = () => {
           <li>
             <Link
               to="/dashboard/donation"
-              className="w-full uppercase h-full font-bold text-center text-sm text-blue-700"
+              className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm text-blue-700"
             >
               👉 donation
             </Link>
@@ -74,7 +81,7 @@ const Dashboard = () => {
           <li>
             <Link
               to="/dashboard/feedback"
-              className="w-full uppercase h-full font-bold text-center text-sm text-blue-700"
+              className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm text-blue-700"
             >
               👉 feedback
             </Link>
@@ -82,7 +89,7 @@ const Dashboard = () => {
           <li>
             <Link
               to="/dashboard/rescuer"
-              className="w-full uppercase h-full font-bold text-center text-sm text-blue-700"
+              className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm text-blue-700"
             >
               👉 rescuer
             </Link>
@@ -90,14 +97,14 @@ const Dashboard = () => {
           <li>
             <Link
               to="/dashboard/cabin"
-              className="w-full uppercase h-full font-bold text-center text-sm text-blue-700"
+              className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm text-blue-700"
             >
               👉 cabin
             </Link>
           </li>
           <li>
             <Link
-              className="w-full uppercase h-full font-bold text-center text-sm text-blue-700"
+              className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm text-blue-700"
               to="/dashboard/daycareAnimal"
             >
               👉 daycare Animal
@@ -105,7 +112,7 @@ const Dashboard = () => {
           </li>
           <li>
             <Link
-              className="w-full uppercase h-full font-bold text-center text-sm text-blue-700"
+              className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm text-blue-700"
               to="/dashboard/rescuedAnimal"
             >
               👉 rescued Animal

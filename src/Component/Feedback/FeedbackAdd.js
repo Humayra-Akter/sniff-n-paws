@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 
 const FeedbackAdd = () => {
   const current = new Date();
@@ -17,8 +18,25 @@ const FeedbackAdd = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let adminUrl = `http://localhost:3002/feedback_insert/${formData.subject}/${date}/${formData.rating}/${formData.message}/1`;
-    fetch(adminUrl);
+
+    fetch("http://localhost:3002/login_status")
+      .then((res) => res.json())
+      .then((data) => {
+        const status = data[0][0];
+        if (status === 0) {
+          toast.error("Please login first");
+        } else {
+          fetch("http://localhost:3002/login_cust_id")
+            .then((res) => res.json())
+            .then((data) => {
+              const id = data[0][0];
+              let adminUrl = `http://localhost:3002/feedback_insert/${formData.subject}/${date}/${formData.rating}/${formData.message}/${id}`;
+              fetch(adminUrl);
+              toast.success("Feedback added successfully");
+            });
+        }
+      });
+
     ///feedback_insert/:subject/:date/:rating/:message/:customerId
   };
 

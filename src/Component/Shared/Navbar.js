@@ -6,6 +6,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { signOut } from "firebase/auth";
 import useLoginUsers from "../../hooks/useLoginUsers";
+import bg from "../../assets/images/images_3.jpg";
 
 const Navbar = () => {
   const [user, loading, error] = useAuthState(auth);
@@ -157,7 +158,13 @@ const Navbar = () => {
   );
   return (
     <div>
-      <div className="navbar bg-blue-50">
+      <div
+        style={{
+          background: `url(${bg})`,
+          backgroundSize: "cover",
+        }}
+        className="navbar bg-blue-50"
+      >
         <div className="navbar-start">
           <div className="dropdown">
             <ul

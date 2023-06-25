@@ -6,9 +6,9 @@ import img4 from "../../assets/images/fostercat2.jpg";
 import img5 from "../../assets/images/fosterDog2.jpg";
 import img6 from "../../assets/images/fosterRabbit2.jpg";
 import ServiceCards from "./ServiceCards";
+import bg from "../../assets/images/output7.png";
 
 const Services = () => {
-
   const services = [
     {
       _id: 1,
@@ -55,7 +55,13 @@ const Services = () => {
   ];
   return (
     <div>
-      <div className="my-28">
+      <div
+        style={{
+          background: `url(${bg})`,
+          backgroundSize: "cover",
+        }}
+        className="p-28 gap-10"
+      >
         <div className="text-center">
           <h3 className="text-blue-800 font-black text-2xl">OUR SERVICES</h3>
         </div>

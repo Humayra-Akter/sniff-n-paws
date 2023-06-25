@@ -25,7 +25,7 @@ const ServiceCards = ({ service }) => {
       <div className="card-body items-center text-center" data-aos="fade-down">
         <h2 className="card-title">{name}</h2>
         <p>{description}</p>
-        <div className="grid grid-cols-2 gap-4">
+        {/* <div className="grid grid-cols-2 gap-4">
           <button className="btn btn-sm bg-blue-100 max-w-xs btn-outline font-semibold text-blue-700">
             <Link className="text-blue-700" to="/loginView">
               login
@@ -36,7 +36,7 @@ const ServiceCards = ({ service }) => {
               donate
             </Link>
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
   );

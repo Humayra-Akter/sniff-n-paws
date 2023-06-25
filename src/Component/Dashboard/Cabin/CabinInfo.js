@@ -27,7 +27,7 @@ const CabinInfo = () => {
                   capacity
                 </td>
                 <td className="uppercase text-xs font-extrabold text-left">
-                  current animal count{" "}
+                  current animal count
                 </td>
                 <td className="uppercase text-xs font-extrabold text-left">
                   free space

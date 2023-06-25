@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import CabinRow from "./CabinRow";
 import CabinInfo from "./CabinInfo";
+import CabinInsert from "./CabinInsert";
 
 const Cabin = () => {
   const [cabins, setCabins] = useState([]);
@@ -13,7 +14,10 @@ const Cabin = () => {
   }, []);
   return (
     <div>
-      <CabinInfo></CabinInfo>
+      <div>
+        <CabinInfo></CabinInfo>
+        <CabinInsert></CabinInsert>
+      </div>
       <div className="pt-20 pb-56 pl-0">
         <div className="overflow-x-auto">
           <h1 className="font-semibold text-2xl pb-7 text-blue-700">
