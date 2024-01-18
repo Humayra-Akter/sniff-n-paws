@@ -7,17 +7,23 @@ import img5 from "../../assets/images/call.png";
 import img6 from "../../assets/images/address.png";
 import img7 from "../../assets/images/facebook-app-symbol.png";
 import img8 from "../../assets/images/kitty-g3d21a21e7_1280.png";
+import bg from "../../assets/images/output7.png";
 
 const Contact = () => {
   return (
-    <div>
+    <div
+      style={{
+        background: `url(${bg})`,
+        backgroundSize: "cover",
+      }}
+    >
       <div>
-        <h1 className="uppercase p-10 font-bold text-3xl text-blue-700 text-center">
+        <h1 className="uppercase p-10 font-bold text-3xl text-white-700 text-center">
           group members
         </h1>
       </div>
       <div className="flex p-4 pt-12 space-x-4 pb-24">
-        <div class="card w-96 text-blue-700 shadow-xl">
+        <div class="card w-96 text-white-700 shadow-xl">
           <figure>
             <img src={img1} className="w-72 h-72" />
           </figure>
@@ -37,7 +43,7 @@ const Contact = () => {
             </p>
           </div>
         </div>
-        <div class="card w-96 text-blue-700 shadow-xl">
+        <div class="card w-96 text-white-700 shadow-xl">
           <figure>
             <img src={img2} className="w-72 h-72" />
           </figure>
@@ -59,7 +65,7 @@ const Contact = () => {
             </p>
           </div>
         </div>
-        <div class="card w-96 text-blue-700 shadow-xl">
+        <div class="card w-96 text-white-700 shadow-xl">
           <figure>
             <img src={img3} className="w-72 h-72" />
           </figure>
@@ -79,7 +85,7 @@ const Contact = () => {
             </p>
           </div>
         </div>
-        <div class="card w-96 text-blue-700 shadow-xl">
+        <div class="card w-96 text-white-700 shadow-xl">
           <figure>
             <img src={img4} className="w-72 h-72" />
           </figure>
@@ -101,7 +107,7 @@ const Contact = () => {
             </p>
           </div>
         </div>
-        <div class="card w-96 text-blue-700 shadow-xl">
+        <div class="card w-96 text-white-700 shadow-xl">
           <figure>
             <img src={img8} className="w-72 h-72" />
           </figure>
