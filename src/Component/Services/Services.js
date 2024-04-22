@@ -66,12 +66,12 @@ const Services = () => {
           <h3 className="text-blue-800 font-black text-2xl">OUR SERVICES</h3>
         </div>
         <div className="grid grid-cols-3 px-20 pt-20 gap-10 ">
-          {services.map((service) => (
+          {services?.map((service) => (
             <ServiceCards key={services._id} service={service}></ServiceCards>
           ))}
         </div>
         <div className="grid grid-cols-3 px-20 pt-20 gap-10">
-          {services.map((service) => (
+          {services?.map((service) => (
             <ServiceCards key={services._id} service={service}></ServiceCards>
           ))}
         </div>

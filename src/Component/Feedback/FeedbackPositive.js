@@ -17,7 +17,7 @@ const FeedbackPositive = () => {
           Our positive feedbacks
         </h1>
         <div className="grid grid-cols-3 px-20 pt-20 gap-10">
-          {positives.map((positive) => (
+          {positives?.map((positive) => (
             <FeedbackPositiveRow positive={positive}></FeedbackPositiveRow>
           ))}
         </div>

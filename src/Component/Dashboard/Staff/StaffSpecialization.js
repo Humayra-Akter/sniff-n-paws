@@ -15,7 +15,7 @@ const StaffSpecialization = () => {
     <div>
       <div className="my-12">
         <div className="grid grid-cols-1 px-20 pt-20 gap-10">
-          {specializations.map((specialization) => (
+          {specializations?.map((specialization) => (
             <StaffSpecializationCard
               key={specialization.feedback_id}
               specialization={specialization}

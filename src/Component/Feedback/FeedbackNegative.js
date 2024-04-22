@@ -17,7 +17,7 @@ const FeedbackNegative = () => {
           Our negative reviews
         </h2>
         <div className="grid grid-cols-3 px-20 pt-20 gap-10">
-          {negatives.map((negative) => (
+          {negatives?.map((negative) => (
             <FeedbackNegativeRow negative={negative}></FeedbackNegativeRow>
           ))}
         </div>

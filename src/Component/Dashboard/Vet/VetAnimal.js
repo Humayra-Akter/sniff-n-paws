@@ -35,7 +35,7 @@ const VetAnimal = () => {
               </tr>
             </thead>
             <tbody>
-              {vets.map((vet) => (
+              {vets?.map((vet) => (
                 <VetAnimalRow key={vet.vet_id} vet={vet}></VetAnimalRow>
               ))}
             </tbody>

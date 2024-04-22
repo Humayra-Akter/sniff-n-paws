@@ -41,7 +41,7 @@ const StaffAdminView = () => {
             </tr>
           </thead>
           <tbody>
-            {admins.map((admin) => (
+            {admins?.map((admin) => (
               <StaffAdminViewRow admin={admin}></StaffAdminViewRow>
             ))}
           </tbody>

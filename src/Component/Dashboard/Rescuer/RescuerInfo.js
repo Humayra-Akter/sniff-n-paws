@@ -45,7 +45,7 @@ const RescuerInfo = () => {
               </tr>
             </thead>
             <tbody>
-              {infos.map((info) => (
+              {infos?.map((info) => (
                 <RescuerInfoRow info={info}></RescuerInfoRow>
               ))}
             </tbody>

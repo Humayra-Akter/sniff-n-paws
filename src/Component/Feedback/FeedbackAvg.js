@@ -30,7 +30,7 @@ const FeedbackAvg = () => {
               </tr>
             </thead>
             <tbody>
-              {feedbacks.map((feedback) => (
+              {feedbacks?.map((feedback) => (
                 <FeedbackAvgRow feedback={feedback}></FeedbackAvgRow>
               ))}
             </tbody>

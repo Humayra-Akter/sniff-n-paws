@@ -36,7 +36,7 @@ const CustomerPricing = () => {
               </tr>
             </thead>
             <tbody>
-              {customerPricings.map((customerPricing) => (
+              {customerPricings?.map((customerPricing) => (
                 <CustomerPricingRow
                   key={customerPricing.customerPricing_id}
                   customerPricing={customerPricing}

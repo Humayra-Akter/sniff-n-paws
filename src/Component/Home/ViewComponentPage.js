@@ -282,7 +282,7 @@ const ViewComponentPage = () => {
                     ) ||
                     component.FUNCTIONALITY.toLowerCase().includes(searchTerm)
                 )
-                .map((component, index) => (
+                ?.map((component, index) => (
                   <tr key={component.COMP_ID}>
                     <td>{component.COMP_ID}</td>
                     <td>{`${component.COMPONENT_MODEL}`}</td>

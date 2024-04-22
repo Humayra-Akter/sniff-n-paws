@@ -12,7 +12,7 @@ const VetProfile = () => {
   }, []);
   return (
     <div>
-      {customers.map((customer) => (
+      {customers?.map((customer) => (
         <VetProfileRow
           key={customer.customer_id}
           customer={customer}

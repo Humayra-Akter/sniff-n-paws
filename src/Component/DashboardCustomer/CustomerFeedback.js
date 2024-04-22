@@ -13,7 +13,7 @@ const CustomerFeedback = () => {
   return (
     <div>
       <div className="my-12">
-        {feedbacks.map((feedback) => (
+        {feedbacks?.map((feedback) => (
           <CustomerFeedbackRow feedback={feedback}></CustomerFeedbackRow>
         ))}
       </div>

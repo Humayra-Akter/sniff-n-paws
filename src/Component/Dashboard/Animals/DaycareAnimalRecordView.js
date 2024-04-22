@@ -35,7 +35,7 @@ const DaycareAnimalRecordView = () => {
               </tr>
             </thead>
             <tbody>
-              {animals.map((animal) => (
+              {animals?.map((animal) => (
                 <DaycareAnimalRecordViewRow
                   animal={animal}
                 ></DaycareAnimalRecordViewRow>

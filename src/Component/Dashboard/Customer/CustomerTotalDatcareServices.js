@@ -33,7 +33,7 @@ const CustomerTotalDatcareServices = () => {
               </tr>
             </thead>
             <tbody>
-              {totalDatcareServices.map((totalDatcareService) => (
+              {totalDatcareServices?.map((totalDatcareService) => (
                 <CustomerTotalDatcareServicesRow
                   key={totalDatcareService.customerPricing_id}
                   totalDatcareService={totalDatcareService}

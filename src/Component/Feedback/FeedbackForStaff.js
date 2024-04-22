@@ -17,7 +17,7 @@ const FeedbackForStaff = () => {
           Our Staff reviews
         </h2>
         <div className="grid grid-cols-3 px-20 pt-20 gap-10">
-          {feedbacks.map((feedback) => (
+          {feedbacks?.map((feedback) => (
             <FeedbackReviewRow feedback={feedback}></FeedbackReviewRow>
           ))}
         </div>

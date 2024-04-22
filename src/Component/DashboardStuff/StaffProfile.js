@@ -12,7 +12,7 @@ const StaffProfile = () => {
   }, []);
   return (
     <div>
-      {customers.map((customer) => (
+      {customers?.map((customer) => (
         <StaffProfileRow
           key={customer.customer_id}
           customer={customer}

@@ -34,7 +34,7 @@ const StaffRescuedAnimal = () => {
               </tr>
             </thead>
             <tbody>
-              {animals.map((animal) => (
+              {animals?.map((animal) => (
                 <StaffDaycareAnimalRow animal={animal}></StaffDaycareAnimalRow>
               ))}
             </tbody>

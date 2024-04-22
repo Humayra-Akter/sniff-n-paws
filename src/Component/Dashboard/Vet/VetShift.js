@@ -33,7 +33,7 @@ const VetShift = () => {
               </tr>
             </thead>
             <tbody>
-              {vets.map((vet) => (
+              {vets?.map((vet) => (
                 <VetShiftScheduleView
                   key={vet.vet_id}
                   vet={vet}

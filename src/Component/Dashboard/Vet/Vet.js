@@ -59,7 +59,7 @@ const Vet = () => {
               </tr>
             </thead>
             <tbody>
-              {vets.map((vet) => (
+              {vets?.map((vet) => (
                 <VetRow key={vet.vet_id} vet={vet}></VetRow>
               ))}
             </tbody>

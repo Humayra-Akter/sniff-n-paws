@@ -34,7 +34,7 @@ const DonateHistory = () => {
                 </tr>
               </thead>
               <tbody>
-                {donations.map((donation) => (
+                {donations?.map((donation) => (
                   <DonationHistoryRow
                     key={donation.feedback_id}
                     donation={donation}

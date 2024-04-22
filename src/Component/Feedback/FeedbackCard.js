@@ -16,7 +16,7 @@ const FeedbackCard = () => {
     <div>
       <div className="my-12">
         <div className="grid grid-cols-1 px-20 pt-20 gap-10">
-          {feedbacks.slice(0, 3).map((feedback) => (
+          {feedbacks.slice(0, 3)?.map((feedback) => (
             <FeedbackCardsss
               key={feedback.feedback_id}
               feedback={feedback}

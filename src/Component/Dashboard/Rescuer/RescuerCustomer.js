@@ -32,7 +32,7 @@ const RescuerCustomer = () => {
               </tr>
             </thead>
             <tbody>
-              {vets.map((vet) => (
+              {vets?.map((vet) => (
                 <RescuerRow key={vet.vet_id} vet={vet}></RescuerRow>
               ))}
             </tbody>

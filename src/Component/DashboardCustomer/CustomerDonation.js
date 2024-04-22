@@ -25,7 +25,7 @@ const CustomerDonation = () => {
             </tr>
           </thead>
           <tbody>
-            {donations.map((donation) => (
+            {donations?.map((donation) => (
               <DonationRow donation={donation}></DonationRow>
             ))}
           </tbody>

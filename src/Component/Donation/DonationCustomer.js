@@ -45,7 +45,7 @@ const DonationCustomer = () => {
                 </tr>
               </thead>
               <tbody>
-                {donations.map((donation) => (
+                {donations?.map((donation) => (
                   <DonationRows
                     key={donation.feedback_id}
                     donation={donation}

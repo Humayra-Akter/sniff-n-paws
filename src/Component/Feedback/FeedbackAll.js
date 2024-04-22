@@ -19,7 +19,7 @@ const FeedbackAll = () => {
       </div>
       <div className="my-12">
         <div className="grid grid-cols-3 px-20 pt-20 gap-10">
-          {feedbacks.map((feedback) => (
+          {feedbacks?.map((feedback) => (
             <FeedbackCardsss
               key={feedback.feedback_id}
               feedback={feedback}

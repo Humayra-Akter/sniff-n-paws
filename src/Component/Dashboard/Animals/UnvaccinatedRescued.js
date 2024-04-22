@@ -32,7 +32,7 @@ const UnvaccinatedRescued = () => {
               </tr>
             </thead>
             <tbody>
-              {animals.map((animal) => (
+              {animals?.map((animal) => (
                 <DaycareAnimalRow
                   key={animal.index}
                   animal={animal}

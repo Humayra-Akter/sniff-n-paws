@@ -43,7 +43,7 @@ const CustomerSelfInfo = () => {
             </tr>
           </thead>
           <tbody>
-            {customers.map((customer) => (
+            {customers?.map((customer) => (
               <CustomerSelfInfoRow
                 key={customer.customer_id}
                 customer={customer}

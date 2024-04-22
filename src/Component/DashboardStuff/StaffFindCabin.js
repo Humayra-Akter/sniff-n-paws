@@ -65,7 +65,7 @@ const StaffFindCabin = () => {
               </tr>
             </thead>
             <tbody>
-              {staffs.map((staff) => (
+              {staffs?.map((staff) => (
                 <StaffFindCabinRow
                   key={staff.staff_id}
                   staff={staff}

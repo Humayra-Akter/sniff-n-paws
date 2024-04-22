@@ -41,7 +41,7 @@ const FeedbackPrev = () => {
               </tr>
             </thead>
             <tbody>
-              {feedbacks.map((feedback) => (
+              {feedbacks?.map((feedback) => (
                 <FeedbackRows
                   key={feedback.feedback_id}
                   feedback={feedback}

@@ -44,7 +44,7 @@ const Cabin = () => {
               </tr>
             </thead>
             <tbody>
-              {cabins.map((cabin) => (
+              {cabins?.map((cabin) => (
                 <CabinRow
                   key={cabin.customerAnimalCabin_id}
                   cabin={cabin}
